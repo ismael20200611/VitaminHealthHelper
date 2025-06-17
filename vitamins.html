@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Select Vitamin Deficiency - Vitamin Health Helper</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Select Your Vitamin Deficiency</h1>
+    <p>Choose a vitamin below to get natural food, plant, workout, and sunlight suggestions.</p>
+  </header>
+
+  <main>
+    <select id="vitaminSelect" aria-label="Select Vitamin">
+      <option value="">-- Select Vitamin --</option>
+      <option value="vitaminA">Vitamin A</option>
+      <option value="vitaminB1">Vitamin B1 (Thiamine)</option>
+      <option value="vitaminB2">Vitamin B2 (Riboflavin)</option>
+      <option value="vitaminB3">Vitamin B3 (Niacin)</option>
+      <option value="vitaminB5">Vitamin B5 (Pantothenic Acid)</option>
+      <option value="vitaminB6">Vitamin B6 (Pyridoxine)</option>
+      <option value="vitaminB7">Vitamin B7 (Biotin)</option>
+      <option value="vitaminB9">Vitamin B9 (Folate)</option>
+      <option value="vitaminB12">Vitamin B12 (Cobalamin)</option>
+      <option value="vitaminC">Vitamin C</option>
+      <option value="vitaminD">Vitamin D</option>
+      <option value="vitaminE">Vitamin E</option>
+      <option value="vitaminK">Vitamin K</option>
+    </select>
+
+    <section id="suggestions" aria-live="polite" class="suggestions-container">
+      <!-- Suggestions will appear here dynamically -->
+    </section>
+  </main>
+
+  <nav>
+    <a href="index.html" class="btn">Back Home</a>
+    <a href="quiz.html" class="btn">Go to Symptom Quiz</a>
+  </nav>
+
+  <script src="js/vitamins.js"></script>
+</body>
+</html>

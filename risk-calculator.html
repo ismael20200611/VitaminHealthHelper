@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vitamin Deficiency Risk Calculator 🌿</title>
+<style>
+ h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #27632a;
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  select {
+    margin-top: 0.3rem;
+    padding: 0.4rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #4caf50;
+  }
+  button {
+    margin-top: 1.5rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.9rem 1.7rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 3px 8px #2e7d32;
+  }
+  button:hover {
+    background: #3a8a32;
+  }
+  #result {
+    margin-top: 2rem;
+    background: #dcedc1;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 0 12px #4caf50;
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
+  .vitamin-block {
+    background: #a8e6cf;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    box-shadow: 0 2px 5px #76c893;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .vitamin-icon {
+    font-size: 3rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .vitamin-content {
+    flex-grow: 1;
+  }
+  .vitamin-content strong {
+    font-size: 1.2rem;
+    color: #205522;
+  }
+  .section-title {
+    font-weight: bold;
+    margin-top: 0.4rem;
+    color: #2a5d2a;
+  }
+  .food-list {
+    margin-left: 1rem;
+  }
+  /* Responsive */
+  @media (max-width: 480px) {
+    body {
+      margin: 0.5rem;
+      padding: 0.5rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.7rem;
+    }
+    .vitamin-icon {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/risk-calculator.js"></script>
+</head>
+<body>
+
+<h1>Vitamin Deficiency Risk Calculator 🌿</h1>
+
+<form id="quizForm">
+
+  <label>
+    How often do you eat fruits and vegetables?
+    <select id="fruitsVeg" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="low">Rarely (0-1 days/week)</option>
+      <option value="medium">Sometimes (2-4 days/week)</option>
+      <option value="high">Often (5+ days/week)</option>
+    </select>
+  </label>
+
+  <label>
+    How much time do you spend in sunlight daily?
+    <select id="sunlight" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="low">Less than 10 minutes</option>
+      <option value="medium">10 to 30 minutes</option>
+      <option value="high">More than 30 minutes</option>
+    </select>
+  </label>
+
+  <label>
+    What is your diet preference?
+    <select id="diet" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="omnivore">Omnivore (eat meat and plants)</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="vegan">Vegan</option>
+    </select>
+  </label>
+
+  <label>
+    Do you exercise or stay physically active regularly?
+    <select id="exercise" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes, regularly</option>
+      <option value="no">No, rarely</option>
+    </select>
+  </label>
+
+  <label>
+    Do you consume dairy or fortified plant milk products regularly?
+    <select id="dairy" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    How often do you eat fish or seafood?
+    <select id="fish" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="often">Often (3+ times/week)</option>
+      <option value="sometimes">Sometimes (1-2 times/week)</option>
+      <option value="rarely">Rarely or never</option>
+    </select>
+  </label>
+
+  <!-- New Questions -->
+
+  <label>
+    Do you have any digestive or absorption problems (e.g., celiac disease, IBS, gastric surgery)?
+    <select id="digestiveIssues" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    Do you take medications that may affect vitamin absorption (e.g., antacids, metformin)?
+    <select id="medications" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    Are you pregnant or breastfeeding?
+    <select id="pregnant" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    How often do you consume fortified cereals or supplements?
+    <select id="fortified" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="often">Often</option>
+      <option value="sometimes">Sometimes</option>
+      <option value="rarely">Rarely or never</option>
+    </select>
+  </label>
+
+  <label>
+    How often do you eat whole grains?
+    <select id="wholeGrains" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="often">Often</option>
+      <option value="sometimes">Sometimes</option>
+      <option value="rarely">Rarely or never</option>
+    </select>
+  </label>
+
+  <label>
+    Do you smoke or consume alcohol regularly?
+    <select id="smokeAlcohol" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <button type="submit">Check My Risk</button>
+</form>
+
+<div id="result" style="display:none;"></div>
+ <nav>
+    <a href="index.html" class="btn">Back Home</a>
+    <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+  </nav>
+
+<script>
+  const vitaminsData = {
+    // existing vitaminsData object here (unchanged)
+    "Vitamin A": {
+      icon: "🥕",
+      description: "Important for vision, immune system, and skin.",
+      functions: "Supports good eyesight, healthy skin, and immune defense.",
+      symptoms: ["Night blindness", "Dry skin", "Frequent infections"],
+      foods: {
+        vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale"],
+        fruits: ["Mango", "Cantaloupe", "Apricot"],
+        animal: ["Liver", "Eggs", "Butter"]
+      },
+      plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
+      dailyIntake: "700-900 mcg (micrograms) for adults"
+    },
+    "Vitamin B12": {
+      icon: "🍳",
+      description: "Vital for nerve function and blood formation.",
+      functions: "Helps form red blood cells and maintain nerve health.",
+      symptoms: ["Fatigue", "Tingling in hands/feet", "Memory problems"],
+      foods: {
+        animal: ["Eggs", "Fish", "Dairy products", "Fortified cereals"]
+      },
+      plants: ["N/A (only in animal products)"],
+      dailyIntake: "2.4 mcg for adults"
+    },
+    "Vitamin C": {
+      icon: "🍊",
+      description: "Supports immunity and skin health.",
+      functions: "Helps repair tissues and supports immune function.",
+      symptoms: ["Easy bruising", "Slow wound healing", "Bleeding gums"],
+      foods: {
+        fruits: ["Oranges", "Strawberries", "Kiwi", "Bell Peppers"],
+        vegetables: ["Broccoli", "Brussels sprouts"]
+      },
+      plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
+      dailyIntake: "75-90 mg for adults"
+    },
+    "Vitamin D": {
+      icon: "☀️",
+      description: "Helps calcium absorption and bone health.",
+      functions: "Maintains bone strength and immune health.",
+      symptoms: ["Bone pain", "Muscle weakness", "Fatigue"],
+      foods: {
+        animal: ["Fatty fish", "Egg yolks", "Fortified milk"]
+      },
+      plants: ["Sunlight exposure (natural source)"],
+      dailyIntake: "600-800 IU (15-20 mcg) for adults"
+    },
+    "Vitamin K": {
+      icon: "🥬",
+      description: "Crucial for blood clotting and bone health.",
+      functions: "Helps blood clot and supports bone metabolism.",
+      symptoms: ["Easy bruising", "Excessive bleeding"],
+      foods: {
+        vegetables: ["Kale", "Spinach", "Broccoli", "Brussels sprouts"]
+      },
+      plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
+      dailyIntake: "90-120 mcg for adults"
+    },
+    "Iron": {
+      icon: "🥩",
+      description: "Needed for blood oxygen transport.",
+      functions: "Forms hemoglobin in red blood cells.",
+      symptoms: ["Fatigue", "Pale skin", "Shortness of breath"],
+      foods: {
+        animal: ["Red meat", "Chicken", "Fish"],
+        vegetables: ["Spinach", "Lentils", "Chickpeas"]
+      },
+      plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
+      dailyIntake: "8-18 mg for adults (higher for women)"
+    },
+    "Calcium": {
+      icon: "🦴",
+      description: "Essential for strong bones and teeth.",
+      functions: "Supports bone/teeth structure and muscle function.",
+      symptoms: ["Muscle cramps", "Numbness", "Osteoporosis risk"],
+      foods: {
+        animal: ["Dairy products"],
+        vegetables: ["Broccoli", "Kale", "Almonds"],
+        fortified: ["Fortified plant milks"]
+      },
+      plants: ["Almond tree", "Broccoli plant"],
+      dailyIntake: "1000-1200 mg for adults"
+    }
+  };
+
+  document.getElementById("quizForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const fruitsVeg = document.getElementById("fruitsVeg").value;
+    const sunlight = document.getElementById("sunlight").value;
+    const diet = document.getElementById("diet").value;
+    const exercise = document.getElementById("exercise").value;
+    const dairy = document.getElementById("dairy").value;
+    const fish = document.getElementById("fish").value;
+
+    // New answers
+    const digestiveIssues = document.getElementById("digestiveIssues").value;
+    const medications = document.getElementById("medications").value;
+    const pregnant = document.getElementById("pregnant").value;
+    const fortified = document.getElementById("fortified").value;
+    const wholeGrains = document.getElementById("wholeGrains").value;
+    const smokeAlcohol = document.getElementById("smokeAlcohol").value;
+
+    let risks = [];
+
+    // Existing checks
+    if(fruitsVeg === "low"){
+      risks.push("Vitamin C", "Vitamin K", "Vitamin A");
+    } else if(fruitsVeg === "medium"){
+      risks.push("Vitamin K");
+    }
+
+    if(sunlight === "low" && (fish === "rarely" || dairy === "no")){
+      risks.push("Vitamin D");
+    }
+
+    if(diet === "vegan"){
+      risks.push("Vitamin B12");
+    }
+
+    if((diet === "vegetarian" || diet === "vegan") && fish === "rarely"){
+      risks.push("Iron");
+    }
+
+    if(dairy === "no"){
+      risks.push("Calcium");
+    }
+
+    // New logic additions
+
+    // Digestive issues increase risk of Vitamin B12, Iron, Calcium, Vitamin D
+    if(digestiveIssues === "yes"){
+      risks.push("Vitamin B12", "Iron", "Calcium", "Vitamin D");
+    }
+
+    // Medications affect Vitamin B12 and Vitamin D absorption
+    if(medications === "yes"){
+      risks.push("Vitamin B12", "Vitamin D");
+    }
+
+    // Pregnancy or breastfeeding increase risk of Iron, Calcium, Vitamin D
+    if(pregnant === "yes"){
+      risks.push("Iron", "Calcium", "Vitamin D");
+    }
+
+    // Rarely consuming fortified cereals or supplements can increase Vitamin B12 risk (if vegan/vegetarian)
+    if(fortified === "rarely" && (diet === "vegetarian" || diet === "vegan")){
+      risks.push("Vitamin B12");
+    }
+
+    // Rarely eating whole grains might increase risk of some B vitamins and minerals (simplified here as Iron)
+    if(wholeGrains === "rarely"){
+      risks.push("Iron");
+    }
+
+    // Smoking and alcohol affect absorption of Vitamin C and others
+    if(smokeAlcohol === "yes"){
+      risks.push("Vitamin C");
+    }
+
+    // Remove duplicates and sort
+    risks = [...new Set(risks)].sort();
+
+    const resultDiv = document.getElementById("result");
+    if(risks.length === 0){
+      resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
+    } else {
+      let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
+      for(let vit of risks){
+        const v = vitaminsData[vit];
+        html += `
+          <div class="vitamin-block">
+            <div class="vitamin-icon">${v.icon}</div>
+            <div class="vitamin-content">
+              <strong>${vit}</strong> — ${v.description}<br/>
+              <span class="section-title">Functions:</span> ${v.functions}<br/>
+              <span class="section-title">Common deficiency symptoms:</span> ${v.symptoms.join(", ")}<br/>
+              <span class="section-title">Recommended daily intake:</span> ${v.dailyIntake}<br/>
+              <span class="section-title">Natural food sources:</span><br/>
+              ${Object.entries(v.foods).map(([category, items]) => 
+                `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
+              ).join("")}
+              <span class="section-title">Plants:</span> ${v.plants.join(", ")}
+            </div>
+          </div>
+        `;
+      }
+      html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
+      resultDiv.innerHTML = html;
+    }
+    resultDiv.style.display = "block";
+  });
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+</script>
+
+</body>
+</html>

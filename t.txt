@@ -1,0 +1,44 @@
+/ (project root)
+│
+├── index.html           # Home page with intro + links
+├── vitamins.html        # Vitamin selection & detailed suggestions
+├── quiz.html            # Symptom-based quiz page
+├── report.html          # Printable PDF report page
+├── about.html           # About & references page
+│
+├── css/
+│   └── style.css        # Main styles, mobile-friendly & cute design
+│
+├── js/
+│   ├── vitamins.js      # Vitamin suggestions + animations
+│   ├── quiz.js          # Symptom quiz logic + results
+│   ├── report.js        # PDF report generation code
+│   └── utils.js         # Shared helper functions & animations
+│
+├── img/                 # All images and icons (vitamins, foods, plants)
+│
+└── fonts/               # Web fonts (e.g., Poppins)
+-------------------------------------------------------------------------
+update 
+
+/ (project root)
+│
+├── index.html             # Home page with intro + links
+├── vitamins.html          # Vitamin selection & detailed suggestions
+├── quiz.html              # Symptom-based quiz page
+├── report.html            # Printable PDF report page
+├── about.html             # About & references page
+├── risk-calculator.html   # NEW: Vitamin Deficiency Risk Calculator page
+│
+├── css/
+│   └── style.css          # Main styles, now includes risk calculator styles
+│
+├── js/
+│   ├── vitamins.js        # Vitamin suggestions + animations
+│   ├── quiz.js            # Symptom quiz logic + results
+│   ├── report.js          # PDF report generation code
+│   ├── risk-calculator.js # NEW: JS code for risk calculator logic
+│   └── utils.js           # Shared helper functions & animations (e.g., capitalize)
+│
+├── img/                   # All images and icons (vitamins, foods, plants)
+└── fonts/                 # Web fonts (e.g., Poppins)

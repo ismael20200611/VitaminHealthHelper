@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Printable Vitamin Report - Vitamin Health Helper</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Vitamin Deficiency Report</h1>
+    <p>Generate and print your personalized vitamin deficiency report.</p>
+  </header>
+
+  <main>
+    <form id="reportForm" aria-label="Generate Vitamin Report">
+      <label for="userName">Your Name:</label>
+      <input type="text" id="userName" placeholder="Enter your name" required />
+
+      <label for="vitaminReportSelect">Select Vitamin Deficiency:</label>
+      <select id="vitaminReportSelect" required>
+        <option value="">-- Select Vitamin --</option>
+        <option value="vitaminA">Vitamin A</option>
+        <option value="vitaminB1">Vitamin B1 (Thiamine)</option>
+        <option value="vitaminB2">Vitamin B2 (Riboflavin)</option>
+        <option value="vitaminB3">Vitamin B3 (Niacin)</option>
+        <option value="vitaminB5">Vitamin B5 (Pantothenic Acid)</option>
+        <option value="vitaminB6">Vitamin B6 (Pyridoxine)</option>
+        <option value="vitaminB7">Vitamin B7 (Biotin)</option>
+        <option value="vitaminB9">Vitamin B9 (Folate)</option>
+        <option value="vitaminB12">Vitamin B12 (Cobalamin)</option>
+        <option value="vitaminC">Vitamin C</option>
+        <option value="vitaminD">Vitamin D</option>
+        <option value="vitaminE">Vitamin E</option>
+        <option value="vitaminK">Vitamin K</option>
+      </select>
+
+      <button type="submit" class="btn">Generate Report</button>
+    </form>
+
+    <section id="reportOutput" class="suggestions-container" aria-live="polite" style="display:none;">
+      <!-- Report content will appear here -->
+    </section>
+  </main>
+
+  <nav>
+    <a href="index.html" class="btn">Back Home</a>
+    <a href="vitamins.html" class="btn">Select Vitamin</a>
+    <a href="quiz.html" class="btn">Take Symptom Quiz</a>
+  </nav>
+
+  <script src="js/report.js"></script>
+</body>
+</html>

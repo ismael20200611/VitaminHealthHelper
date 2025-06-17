@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Symptom-Based Quiz - Vitamin Health Helper</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Symptom-Based Vitamin Deficiency Quiz</h1>
+    <p>Select your symptoms and find out possible vitamin deficiencies.</p>
+  </header>
+
+  <main>
+    <form id="symptomForm" aria-label="Vitamin deficiency symptom quiz">
+      <fieldset>
+        <legend>Choose symptoms you experience:</legend>
+
+        <label><input type="checkbox" name="symptom" value="tiredness" /> Tiredness/Fatigue</label>
+        <label><input type="checkbox" name="symptom" value="drySkin" /> Dry Skin</label>
+        <label><input type="checkbox" name="symptom" value="bleedingGums" /> Bleeding Gums</label>
+        <label><input type="checkbox" name="symptom" value="musclePain" /> Muscle Pain/Weakness</label>
+        <label><input type="checkbox" name="symptom" value="poorVision" /> Poor Night Vision</label>
+        <label><input type="checkbox" name="symptom" value="slowHealing" /> Slow Healing Wounds</label>
+        <label><input type="checkbox" name="symptom" value="bonePain" /> Bone Pain/Fragility</label>
+        <label><input type="checkbox" name="symptom" value="hairLoss" /> Hair Loss</label>
+        <label><input type="checkbox" name="symptom" value="memoryLoss" /> Memory Problems</label>
+        <label><input type="checkbox" name="symptom" value="numbness" /> Numbness/Tingling</label>
+        <label><input type="checkbox" name="symptom" value="easyBruising" /> Easy Bruising</label>
+        <label><input type="checkbox" name="symptom" value="depression" /> Depression/Mood Swings</label>
+        <label><input type="checkbox" name="symptom" value="poorAppetite" /> Poor Appetite</label>
+      </fieldset>
+      <button type="submit" class="btn">Check Deficiency</button>
+    </form>
+
+    <section id="quizResults" aria-live="polite" class="suggestions-container"></section>
+  </main>
+
+  <nav>
+    <a href="index.html" class="btn">Back Home</a>
+    <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+  </nav>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>
