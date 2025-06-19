@@ -133,8 +133,8 @@
     <select id="diet" required>
       <option value="" disabled selected>Select one</option>
       <option value="omnivore">Omnivore(eat meat and plants)</option>
-      <option value="vegetarian">Vegetarian(No Meat or Fish,but may eat(CheesePizza,PastaWithTomatoSauce,Omelet))</option>
-      <option value="vegan">Vegan(No Animal Products at All(Fruits,vegetables,Grains(Rice,Oats,Bread)))</option>
+      <option value="vegetarian">Vegetarian(No Meat or Fish, but may eat Cheese, Pizza, Pasta with Tomato Sauce, Omelet)</option>
+      <option value="vegan">Vegan(No Animal Products at All; Fruits, Vegetables, Grains like Rice, Oats, Bread)</option>
     </select>
   </label>
 
@@ -196,7 +196,7 @@
   </label>
 
   <label>
-    How often do you consume fortified cereals or supplements?(Cornflakes with added iron and B12,Oatmeal with added calcium,Breakfast granola with added vitamin D,Multivitamin tablets,Vitamin D drops,Iron capsules,Omega-3 softgels,B12 pills)
+    How often do you consume fortified cereals or supplements? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola, Omega-3 softgels, multivitamins)
     <select id="fortified" required>
       <option value="" disabled selected>Select one</option>
       <option value="often">Often</option>
@@ -235,91 +235,92 @@
 
 <script>
   const vitaminsData = {
-    // existing vitaminsData object here (unchanged)
-    "Vitamin A": {
-      icon: "🥕",
-      description: "Important for vision, immune system, and skin.",
-      functions: "Supports good eyesight, healthy skin, and immune defense.",
-      symptoms: ["Night blindness", "Dry skin", "Frequent infections"],
-      foods: {
-        vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale"],
-        fruits: ["Mango", "Cantaloupe", "Apricot"],
-        animal: ["Liver", "Eggs", "Butter"]
-      },
-      plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
-      dailyIntake: "700-900 mcg (micrograms) for adults"
+  "Vitamin A": {
+    icon: "🥕",
+    description: "Essential for healthy vision, immune strength, and skin regeneration.",
+    functions: "Supports clear eyesight, healthy skin, and immune defense.",
+    symptoms: ["Night blindness", "Dry or rough skin", "Frequent infections", "Delayed wound healing"],
+    foods: {
+      vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale", "Pumpkin", "Red Bell Peppers"],
+      fruits: ["Mango", "Cantaloupe", "Apricot", "Watermelon"],
+      animal: ["Liver", "Eggs", "Butter"]
     },
-    "Vitamin B12": {
-      icon: "🍳",
-      description: "Vital for nerve function and blood formation.",
-      functions: "Helps form red blood cells and maintain nerve health.",
-      symptoms: ["Fatigue", "Tingling in hands/feet", "Memory problems"],
-      foods: {
-        animal: ["Eggs", "Fish", "Dairy products", "Fortified cereals"]
-      },
-      plants: ["N/A (only in animal products)"],
-      dailyIntake: "2.4 mcg for adults"
+    plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
+    dailyIntake: "Best obtained from liver, carrots, sweet potatoes, and leafy greens."
+  },
+  "Vitamin B12": {
+    icon: "🍳",
+    description: "Supports nerve health and helps create red blood cells.",
+    functions: "Vital for brain function, energy levels, and blood production.",
+    symptoms: ["Fatigue", "Tingling in hands or feet", "Poor memory", "Dizziness"],
+    foods: {
+      animal: ["Eggs", "Fish (salmon, tuna)", "Milk", "Cheese", "Yogurt"]
     },
-    "Vitamin C": {
-      icon: "🍊",
-      description: "Supports immunity and skin health.",
-      functions: "Helps repair tissues and supports immune function.",
-      symptoms: ["Easy bruising", "Slow wound healing", "Bleeding gums"],
-      foods: {
-        fruits: ["Oranges", "Strawberries", "Kiwi", "Bell Peppers"],
-        vegetables: ["Broccoli", "Brussels sprouts"]
-      },
-      plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
-      dailyIntake: "75-90 mg for adults"
+    plants: ["None (naturally found only in animal-based foods)"] ,
+    dailyIntake: " Important for vegetarians and vegans to consume fortified plant foods or B12-rich animal products."
+  },
+  "Vitamin C": {
+    icon: "🍊",
+    description: "Boosts immune function, skin repair, and collagen production.",
+    functions: "Helps heal wounds, maintain skin health, and strengthen immunity.",
+    symptoms: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
+    foods: {
+      fruits: ["Oranges", "Strawberries", "Kiwi", "Guava", "Papaya", "Pineapple"],
+      vegetables: ["Bell Peppers", "Broccoli", "Brussels Sprouts", "Tomatoes"]
     },
-    "Vitamin D": {
-      icon: "☀️",
-      description: "Helps calcium absorption and bone health.",
-      functions: "Maintains bone strength and immune health.",
-      symptoms: ["Bone pain", "Muscle weakness", "Fatigue"],
-      foods: {
-        animal: ["Fatty fish", "Egg yolks", "Fortified milk"]
-      },
-      plants: ["Sunlight exposure (natural source)"],
-      dailyIntake: "600-800 IU (15-20 mcg) for adults"
+    plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
+    dailyIntake: " Get from citrus fruits, berries, peppers, and cruciferous vegetables."
+  },
+  "Vitamin D": {
+    icon: "☀️",
+    description: "Helps absorb calcium and supports strong bones and immune health.",
+    functions: "Essential for bone growth, muscle function, and immune defense.",
+    symptoms: ["Bone pain", "Weak muscles", "Low energy", "Frequent illness"],
+    foods: {
+      animal: ["Fatty fish (salmon, mackerel)", "Egg yolks", "Liver"],
+      plants: ["Sunlight exposure (natural source)"]
     },
-    "Vitamin K": {
-      icon: "🥬",
-      description: "Crucial for blood clotting and bone health.",
-      functions: "Helps blood clot and supports bone metabolism.",
-      symptoms: ["Easy bruising", "Excessive bleeding"],
-      foods: {
-        vegetables: ["Kale", "Spinach", "Broccoli", "Brussels sprouts"]
-      },
-      plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
-      dailyIntake: "90-120 mcg for adults"
+    plants: ["Sunlight exposure"],
+    dailyIntake: " Primary sources include oily fish and sensible sun exposure."
+  },
+  "Vitamin K": {
+    icon: "🥬",
+    description: "Crucial for blood clotting and maintaining bone health.",
+    functions: "Helps wounds heal and supports strong bones.",
+    symptoms: ["Excessive bleeding", "Easy bruising", "Weak bones"],
+    foods: {
+      vegetables: ["Kale", "Spinach", "Broccoli", "Brussels Sprouts", "Collard Greens", "Turnip Greens"]
     },
-    "Iron": {
-      icon: "🥩",
-      description: "Needed for blood oxygen transport.",
-      functions: "Forms hemoglobin in red blood cells.",
-      symptoms: ["Fatigue", "Pale skin", "Shortness of breath"],
-      foods: {
-        animal: ["Red meat", "Chicken", "Fish"],
-        vegetables: ["Spinach", "Lentils", "Chickpeas"]
-      },
-      plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
-      dailyIntake: "8-18 mg for adults (higher for women)"
+    plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
+    dailyIntake: " Best from dark leafy greens like kale and spinach."
+  },
+  "Iron": {
+    icon: "🥩",
+    description: "Carries oxygen in the blood and prevents tiredness.",
+    functions: "Supports energy levels, red blood cell creation, and focus.",
+    symptoms: ["Tiredness", "Pale skin", "Headaches", "Shortness of breath"],
+    foods: {
+      animal: ["Red meat", "Liver", "Chicken", "Turkey", "Fish"],
+      vegetables: ["Spinach", "Lentils", "Beans", "Tofu", "Pumpkin seeds"]
     },
-    "Calcium": {
-      icon: "🦴",
-      description: "Essential for strong bones and teeth.",
-      functions: "Supports bone/teeth structure and muscle function.",
-      symptoms: ["Muscle cramps", "Numbness", "Osteoporosis risk"],
-      foods: {
-        animal: ["Dairy products"],
-        vegetables: ["Broccoli", "Kale", "Almonds"],
-        fortified: ["Fortified plant milks"]
-      },
-      plants: ["Almond tree", "Broccoli plant"],
-      dailyIntake: "1000-1200 mg for adults"
-    }
-  };
+    plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
+    dailyIntake: " Include red meat, beans, spinach, and seeds in meals."
+  },
+  "Calcium": {
+    icon: "🦴",
+    description: "Builds strong bones and supports heart and muscle function.",
+    functions: "Maintains bone structure, supports nerve function and muscle contraction.",
+    symptoms: ["Muscle cramps", "Weak bones", "Tooth decay", "Numbness"],
+    foods: {
+      animal: ["Milk", "Cheese", "Yogurt"],
+      vegetables: ["Broccoli", "Kale", "Bok Choy", "Almonds", "Sesame seeds"]
+    },
+    plants: ["Almond tree", "Broccoli plant", "Kale leaves"],
+    dailyIntake: " Obtain from dairy, leafy greens, and calcium-rich nuts/seeds."
+  }
+};
+
+
 
   document.getElementById("quizForm").addEventListener("submit", function(event){
     event.preventDefault();
