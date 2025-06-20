@@ -1,6 +1,6 @@
 const vitaminData = {
-  vitaminA: {
-    name: "Vitamin A",
+   vitaminA: {
+    name: "Vitamin A  – for vision, skin, and immune health",
     foods: ["Carrots 🥕", "Sweet Potatoes 🍠", "Spinach 🌿", "Kale 🥬", "Mango 🥭", "Pumpkin 🎃", "Red Bell Peppers 🌶️", "Apricots"],
     plants: ["Carrot Plant", "Spinach Leaves", "Kale", "Pumpkin Vine"],
     workouts: ["Outdoor walking", "Eye relaxation exercises"],
@@ -18,7 +18,7 @@ const vitaminData = {
     funFact: "Did you know? Sweet potatoes have more vitamin A than carrots per serving!"
   },
   vitaminB1: {
-    name: "Vitamin B1 (Thiamine)",
+    name: "Vitamin (Thiamine) – for energy and nerve function",
     foods: ["Whole Grains 🌾", "Sunflower Seeds 🌻", "Beans 🫘", "Green Peas", "Flaxseeds"],
     plants: ["Sunflower", "Pea Plant"],
     workouts: ["Cardio for energy metabolism", "Brisk walking", "Dancing"], // no yoga
@@ -37,7 +37,7 @@ const vitaminData = {
   },
 
   vitaminB2: {
-    name: "Vitamin B2 (Riboflavin)",
+    name: "Vitamin B2 (Riboflavin) – helps break down food for energy",
     foods: ["Almonds 🌰", "Spinach 🥬", "Eggs 🥚", "Milk 🥛", "Mushrooms 🍄", "Quinoa"],
     plants: ["Spinach", "Mushroom Caps"],
     workouts: ["Light aerobic exercises", "Stretching"],
@@ -55,7 +55,7 @@ const vitaminData = {
     funFact: "Did you know? Riboflavin gives milk and urine a yellow color when consumed in excess!"
   },
   vitaminB3: {
-    name: "Vitamin B3 (Niacin)",
+    name: "Vitamin B3 (Niacin) – for metabolism and skin health",
     foods: ["Chicken 🍗", "Tuna 🐟", "Peanuts 🥜", "Brown Rice 🍚", "Whole Wheat Bread 🍞", "Avocados"],
     plants: ["Peanut Plant", "Avocado Tree"],
     workouts: ["Endurance training", "Jogging", "Rowing"],
@@ -73,7 +73,7 @@ const vitaminData = {
     funFact: "Did you know? Niacin was once used to treat high cholesterol levels!"
   },
   vitaminB5: {
-    name: "Vitamin B5 (Pantothenic Acid)",
+    name: "Vitamin B5 (Pantothenic Acid) – for hormone and energy production",
     foods: ["Avocado 🥑", "Eggs 🥚", "Mushrooms 🍄", "Sweet Potatoes 🍠", "Broccoli 🥦", "Cauliflower"],
     plants: ["Avocado Tree", "Mushrooms", "Sweet Potato Vine"],
     workouts: ["Resistance training", "Stretch-based exercises"],
@@ -91,7 +91,7 @@ const vitaminData = {
     funFact: "Did you know? The name 'pantothenic' comes from the Greek word for 'everywhere' because it's found in many foods!"
   },
   vitaminB6: {
-    name: "Vitamin B6 (Pyridoxine)",
+    name: "Vitamin B6 (Pyridoxine) – for brain development and immune support",
     foods: ["Bananas 🍌", "Chicken 🍗", "Potatoes 🥔", "Spinach 🌿", "Sunflower Seeds 🌻", "Avocados"],
     plants: ["Banana Plant", "Spinach"],
     workouts: ["Strength training", "Balance-focused workouts", "Core strengthening"],
@@ -109,7 +109,7 @@ const vitaminData = {
     funFact: "Did you know? Vitamin B6 helps your body make neurotransmitters like serotonin and dopamine!"
   },
   vitaminB7: {
-    name: "Vitamin B7 (Biotin)",
+    name: "Vitamin B7 (Biotin) – for hair, skin, and nails",
     foods: ["Egg Yolks 🥚", "Nuts 🌰", "Sweet Potatoes 🍠", "Seeds 🌱", "Cauliflower"],
     plants: ["Sweet Potato Plant", "Nut Trees"],
     workouts: ["General fitness routines", "Flexibility exercises", "Bodyweight training"],
@@ -127,7 +127,7 @@ const vitaminData = {
     funFact: "Did you know? Biotin is sometimes called 'the beauty vitamin' for its effects on hair and nails!"
   },
   vitaminB9: {
-    name: "Vitamin B9 (Folate)",
+    name: "Vitamin B9 (Folate/Folic Acid) – for cell growth and pregnancy health",
     foods: ["Leafy Greens 🥬", "Lentils 🫘", "Asparagus 🌿", "Beets", "Citrus Fruits 🍋", "Okra"],
     plants: ["Lentil Plant", "Leafy Greens", "Beet Plant"],
     workouts: ["Gentle stretching", "Pilates"],
@@ -145,7 +145,7 @@ const vitaminData = {
     funFact: "Did you know? Folate is why leafy greens are called 'superfoods' for pregnancy!"
   },
   vitaminB12: {
-    name: "Vitamin B12 (Cobalamin)",
+    name: "Vitamin B12 (Cobalamin) – for red blood cells and nerve health",
     foods: ["Eggs 🥚", "Milk 🥛", "Fish 🐟", "Cheese 🧀", "Chicken 🍗", "Shellfish"],
     plants: ["N/A (naturally in animal sources only)"],
     workouts: ["Strength training to boost energy", "Core workouts", "Stamina exercises"],
@@ -163,7 +163,7 @@ const vitaminData = {
     funFact: "Did you know? Some algae and fermented foods claim B12 but often lack active forms."
   },
   vitaminC: {
-    name: "Vitamin C",
+    name: "Vitamin C – for immunity, skin, and wound healing",
     foods: ["Oranges 🍊", "Kiwis 🥝", "Strawberries 🍓", "Bell Peppers 🌶️", "Broccoli 🥦", "Guava", "Papaya", "Lemons 🍋"],
     plants: ["Citrus Trees", "Strawberry Plants", "Pepper Plants"],
     workouts: ["Aerobic workouts to support immunity", "Outdoor cycling", "HIIT"],
@@ -181,7 +181,7 @@ const vitaminData = {
     funFact: "Did you know? Bell peppers have more vitamin C than oranges per serving!"
   },
   vitaminD: {
-    name: "Vitamin D",
+    name: "Vitamin D – for bones and calcium absorption",
     foods: ["Salmon 🐠", "Egg Yolks 🥚", "Liver", "Mushrooms exposed to sun 🍄", "Sardines 🐟"],
     plants: ["Sunlight-grown Mushrooms"],
     workouts: ["Outdoor jogging", "Morning stretching"],
@@ -199,7 +199,7 @@ const vitaminData = {
     funFact: "Did you know? Mushrooms exposed to UV light can produce vitamin D like humans!"
   },
   vitaminE: {
-    name: "Vitamin E",
+    name: "Vitamin E – antioxidant, protects cells",
     foods: ["Almonds 🌰", "Sunflower Seeds 🌻", "Spinach 🥬", "Avocado 🥑", "Hazelnuts", "Olive Oil"],
     plants: ["Sunflower", "Avocado Tree", "Olive Tree"],
     workouts: ["Light cardio", "Stretch routines", "Gentle dance"],
@@ -218,7 +218,7 @@ const vitaminData = {
   },
   // For vitaminK workouts, replaced "Tai Chi" with "Balance training"
   vitaminK: {
-    name: "Vitamin K",
+    name: "Vitamin K – for blood clotting and bone health",
     foods: ["Kale 🥬", "Broccoli 🥦", "Spinach 🌿", "Brussels Sprouts 🥦", "Green Beans", "Cabbage"],
     plants: ["Leafy Greens", "Broccoli Plant", "Cabbage Plant"],
     workouts: ["Flexibility workouts", "Balance training"], // removed Tai Chi
