@@ -195,15 +195,26 @@
     </select>
   </label>
 
-  <label>
-    How often do you consume fortified cereals or supplements? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola, Omega-3 softgels, multivitamins)
-    <select id="fortified" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="often">Often</option>
-      <option value="sometimes">Sometimes</option>
-      <option value="rarely">Rarely or never</option>
-    </select>
-  </label>
+ <label>
+  How often do you eat fortified foods? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola)
+  <select id="fortifiedFoods" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="often">Often</option>
+    <option value="sometimes">Sometimes</option>
+    <option value="rarely">Rarely or never</option>
+  </select>
+</label>
+
+<label>
+  How often do you take vitamin or mineral supplements? (e.g., Omega-3 softgels, multivitamins)
+  <select id="supplements" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="often">Often</option>
+    <option value="sometimes">Sometimes</option>
+    <option value="rarely">Rarely or never</option>
+  </select>
+</label>
+
 
   <label>
     How often do you eat whole grains?(like whole wheat bread, oats, brown rice)
@@ -322,117 +333,119 @@
 
 
 
-  document.getElementById("quizForm").addEventListener("submit", function(event){
-    event.preventDefault();
+ document.getElementById("quizForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    const fruitsVeg = document.getElementById("fruitsVeg").value;
-    const sunlight = document.getElementById("sunlight").value;
-    const diet = document.getElementById("diet").value;
-    const exercise = document.getElementById("exercise").value;
-    const dairy = document.getElementById("dairy").value;
-    const fish = document.getElementById("fish").value;
+  const fruitsVeg = document.getElementById("fruitsVeg").value;
+  const sunlight = document.getElementById("sunlight").value;
+  const diet = document.getElementById("diet").value;
+  const exercise = document.getElementById("exercise").value;
+  const dairy = document.getElementById("dairy").value;
+  const fish = document.getElementById("fish").value;
 
-    // New answers
-    const digestiveIssues = document.getElementById("digestiveIssues").value;
-    const medications = document.getElementById("medications").value;
-    const pregnant = document.getElementById("pregnant").value;
-    const fortified = document.getElementById("fortified").value;
-    const wholeGrains = document.getElementById("wholeGrains").value;
-    const smokeAlcohol = document.getElementById("smokeAlcohol").value;
+  const digestiveIssues = document.getElementById("digestiveIssues").value;
+  const medications = document.getElementById("medications").value;
+  const pregnant = document.getElementById("pregnant").value;
+  const fortifiedFoods = document.getElementById("fortifiedFoods").value;
+  const supplements = document.getElementById("supplements").value;
+  const wholeGrains = document.getElementById("wholeGrains").value;
+  const smokeAlcohol = document.getElementById("smokeAlcohol").value;
 
-    let risks = [];
+  let risks = [];
 
-    // Existing checks
-    if(fruitsVeg === "low"){
-      risks.push("Vitamin C", "Vitamin K", "Vitamin A");
-    } else if(fruitsVeg === "medium"){
-      risks.push("Vitamin K");
-    }
-
-    if(sunlight === "low" && (fish === "rarely" || dairy === "no")){
-      risks.push("Vitamin D");
-    }
-
-    if(diet === "vegan"){
-      risks.push("Vitamin B12");
-    }
-
-    if((diet === "vegetarian" || diet === "vegan") && fish === "rarely"){
-      risks.push("Iron");
-    }
-
-    if(dairy === "no"){
-      risks.push("Calcium");
-    }
-
-    // New logic additions
-
-    // Digestive issues increase risk of Vitamin B12, Iron, Calcium, Vitamin D
-    if(digestiveIssues === "yes"){
-      risks.push("Vitamin B12", "Iron", "Calcium", "Vitamin D");
-    }
-
-    // Medications affect Vitamin B12 and Vitamin D absorption
-    if(medications === "yes"){
-      risks.push("Vitamin B12", "Vitamin D");
-    }
-
-    // Pregnancy or breastfeeding increase risk of Iron, Calcium, Vitamin D
-    if(pregnant === "yes"){
-      risks.push("Iron", "Calcium", "Vitamin D");
-    }
-
-    // Rarely consuming fortified cereals or supplements can increase Vitamin B12 risk (if vegan/vegetarian)
-    if(fortified === "rarely" && (diet === "vegetarian" || diet === "vegan")){
-      risks.push("Vitamin B12");
-    }
-
-    // Rarely eating whole grains might increase risk of some B vitamins and minerals (simplified here as Iron)
-    if(wholeGrains === "rarely"){
-      risks.push("Iron");
-    }
-
-    // Smoking and alcohol affect absorption of Vitamin C and others
-    if(smokeAlcohol === "yes"){
-      risks.push("Vitamin C");
-    }
-
-    // Remove duplicates and sort
-    risks = [...new Set(risks)].sort();
-
-    const resultDiv = document.getElementById("result");
-    if(risks.length === 0){
-      resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
-    } else {
-      let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
-      for(let vit of risks){
-        const v = vitaminsData[vit];
-        html += `
-          <div class="vitamin-block">
-            <div class="vitamin-icon">${v.icon}</div>
-            <div class="vitamin-content">
-              <strong>${vit}</strong> — ${v.description}<br/>
-              <span class="section-title">Functions:</span> ${v.functions}<br/>
-              <span class="section-title">Common deficiency symptoms:</span> ${v.symptoms.join(", ")}<br/>
-              <span class="section-title">Recommended daily intake:</span> ${v.dailyIntake}<br/>
-              <span class="section-title">Natural food sources:</span><br/>
-              ${Object.entries(v.foods).map(([category, items]) => 
-                `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
-              ).join("")}
-              <span class="section-title">Plants:</span> ${v.plants.join(", ")}
-            </div>
-          </div>
-        `;
-      }
-      html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
-      resultDiv.innerHTML = html;
-    }
-    resultDiv.style.display = "block";
-  });
-
-  function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+  // Diet and habits
+  if (fruitsVeg === "low") {
+    risks.push("Vitamin C", "Vitamin K", "Vitamin A");
+  } else if (fruitsVeg === "medium") {
+    risks.push("Vitamin K");
   }
+
+  if (sunlight === "low" && (fish === "rarely" || dairy === "no")) {
+    risks.push("Vitamin D");
+  }
+
+  if (diet === "vegan") {
+    risks.push("Vitamin B12");
+  }
+
+  if ((diet === "vegetarian" || diet === "vegan") && fish === "rarely") {
+    risks.push("Iron");
+  }
+
+  if (dairy === "no") {
+    risks.push("Calcium");
+  }
+
+  // Medical conditions
+  if (digestiveIssues === "yes") {
+    risks.push("Vitamin B12", "Iron", "Calcium", "Vitamin D");
+  }
+
+  if (medications === "yes") {
+    risks.push("Vitamin B12", "Vitamin D");
+  }
+
+  if (pregnant === "yes") {
+    risks.push("Iron", "Calcium", "Vitamin D");
+  }
+
+  // Fortified food & supplement habits
+  if (fortifiedFoods === "rarely" && diet === "vegan") {
+    risks.push("Iron");
+  }
+
+  if (supplements === "rarely" && (diet === "vegetarian" || diet === "vegan")) {
+    risks.push("Vitamin B12");
+  }
+
+  // Whole grains
+  if (wholeGrains === "rarely") {
+    risks.push("Iron");
+  }
+
+  // Smoking/alcohol
+  if (smokeAlcohol === "yes") {
+    risks.push("Vitamin C");
+  }
+
+  // Clean output
+  risks = [...new Set(risks)].sort();
+
+  const resultDiv = document.getElementById("result");
+  if (risks.length === 0) {
+    resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
+  } else {
+    let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
+    for (let vit of risks) {
+      const v = vitaminsData[vit];
+      html += `
+        <div class="vitamin-block">
+          <div class="vitamin-icon">${v.icon}</div>
+          <div class="vitamin-content">
+            <strong>${vit}</strong> — ${v.description}<br/>
+            <span class="section-title">Functions:</span> ${v.functions}<br/>
+            <span class="section-title">Common deficiency symptoms:</span> ${v.symptoms.join(", ")}<br/>
+            <span class="section-title">Recommended daily intake:</span> ${v.dailyIntake}<br/>
+            <span class="section-title">Natural food sources:</span><br/>
+            ${Object.entries(v.foods).map(([category, items]) =>
+              `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
+            ).join("")}
+            <span class="section-title">Plants:</span> ${v.plants.join(", ")}
+          </div>
+        </div>
+      `;
+    }
+    html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
+    resultDiv.innerHTML = html;
+  }
+
+  resultDiv.style.display = "block";
+});
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 </script>
 
 </body>
