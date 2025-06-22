@@ -166,7 +166,7 @@ const vitaminData = {
     name: "Vitamin C – for immunity, skin, and wound healing",
     foods: ["Oranges 🍊", "Kiwis 🥝", "Strawberries 🍓", "Bell Peppers 🌶️", "Broccoli 🥦", "Guava", "Papaya", "Lemons 🍋"],
     plants: ["Citrus Trees", "Strawberry Plants", "Pepper Plants"],
-    workouts: ["Aerobic workouts to support immunity", "Outdoor cycling", "HIIT"],
+    workouts: ["Aerobic workouts to support immunity", "Outdoor cycling", "HIIT (High-Intensity Interval Training)"],
     sunlight: "Indirect sunlight enhances immunity and reduces inflammation",
     benefits: "Boosts immune defense, collagen production, and iron absorption",
     deficiency: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
