@@ -2,7 +2,8 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  background: linear-gradient(rgba(243, 191, 255, 0.66), rgba(243, 191, 255, 0.66)), url(../img/bac.png); /* Background image */  
+
+  background: linear-gradient(  rgba(229, 146, 248, 0.66), rgb(223, 130, 244)), url(../img/bac.png); /* Background image */  
   background-size: cover;
   background-position: center;
   color: #2c3e50;
@@ -169,7 +170,7 @@ nav .menu-toggle span {
 
 .container {
   /*  background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/s.jpg); */
-  background:linear-gradient(rgba(229, 146, 248, 0.66), rgb(223, 130, 244));
+  background:linear-gradient(rgba(243, 191, 255, 0.66), rgba(243, 191, 255, 0.66));
   padding: 30px 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
