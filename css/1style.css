@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About & References - Vitamin Health Helper</title>
-  
-  <style>
-
 /* Reset */
 * {
   box-sizing: border-box;
@@ -168,33 +159,3 @@ footer {
     max-width: 100%;
   }
 }
-
-
-
-  </style>
-  
-</head>
-<body>
-  <header>
-    <h1>About Vitamin Health Helper</h1>
-  </header>
-
-  <main>
-    <section>
-      <p>This project helps people understand vitamin deficiencies naturally using food, exercise, plants, and sunlight.</p>
-      <p>All suggestions are based on widely accepted nutrition science and traditional natural remedies.</p>
-      <p>Sources include:</p>
-      <ul>
-        <li><a href="https://ods.od.nih.gov/factsheets/" target="_blank" rel="noopener">NIH Office of Dietary Supplements</a></li>
-        <li><a href="https://www.who.int/nutrition/en/" target="_blank" rel="noopener">World Health Organization Nutrition</a></li>
-        <li><a href="https://www.healthline.com/nutrition/vitamins" target="_blank" rel="noopener">Healthline Vitamins</a></li>
-        <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/" target="_blank" rel="noopener">PubMed Research</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <nav>
-    <a href="index.html" class="btn">Back Home</a>
-  </nav>
-</body>
-</html>

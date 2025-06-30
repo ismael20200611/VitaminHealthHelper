@@ -4,45 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vitamin Health Project - Home</title>
-  <link rel="stylesheet" href="css/1Main_style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  
+  <script src="js/script.js"></script>
   <style>
 
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-/* Base */
-/* body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #d9f0f9, #f3f9fb);
-  color: #2c3e50;
-  max-width: 720px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-} */
-
-h1 {
-  font-weight: 700;
-  color: #27ae60;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-header p {
-  text-align: center;
-  color: #34495e;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-nav {
+.buttonbtn {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -50,7 +18,7 @@ nav {
   margin: 25px 0;
 }
 
-nav a.btn {
+.buttonbtn a.btn {
   background-color: #27ae60;
   color: white;
   padding: 10px 18px;
@@ -61,17 +29,11 @@ nav a.btn {
   box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
 }
 
-nav a.btn:hover {
+.buttonbtn a.btn:hover {
   background-color: #1e874b;
   box-shadow: 0 4px 12px rgba(30, 135, 75, 0.5);
 }
 
-main {
-  background: white;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-}
 
 select,
 button {
@@ -105,71 +67,19 @@ button:hover {
   background-color: #1e874b;
 }
 
-label {
-  display: block;
-  font-size: 1rem;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.suggestions-container {
-  background: #d0f0c0;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: inset 0 0 12px #a6d785;
-  margin-top: 20px;
-  font-size: 1.1rem;
-}
-
-.suggestions-container h2 {
-  color: #1e874b;
-  margin-bottom: 12px;
-}
-
-ul {
-  list-style: inside disc;
-  margin-left: 12px;
-  color: #2c3e50;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #7f8c8d;
-  margin-top: 40px;
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   main {
     padding: 1rem;
   }
 
-  nav a {
+  .buttonbtn a {
     display: inline-block;
     margin: 0.5rem 0;
   }
 }
 
-@media (max-width: 480px) {
-  body {
-    margin: 10px;
-    padding: 15px;
-  }
 
-  nav {
-    gap: 10px;
-  }
-
-  main {
-    padding: 20px 15px;
-  }
-
-  select,
-  button {
-    max-width: 100%;
-  }
-}
 
 
 
@@ -195,11 +105,11 @@ footer {
       <ul id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="tools/product.html">Product</a></li>
-        <!-- <li><a href="tools/about.html">About</a></li> -->
-        <!-- <li><a href="tools/contact.html">Contact</a></li> -->
+        <li><a href="tools/about.html">About</a></li>
+        <li><a href="tools/contact.html">Contact</a></li>
         <li class="dropdown">
           <a href="#" class="dropbtn">Language ▼</a>
-          <!-- <div class="dropdown-content"> -->
+          <div class="dropdown-content">
             <!--
             <a href="Ku/ku_index.html">Kurdish</a>
             <a href="ar/ar_index.html">Arabic</a>
@@ -220,13 +130,12 @@ footer {
     <h1>🌿 Vitamin Health Helper</h1>
     <p>Your guide to natural vitamin balance with foods, sun, workouts & plants!</p>
   
-  <nav>
+  <div class="buttonbtn">
     <a href="vitamins.html" class="btn">Select Vitamin Deficiency</a>
     <a href="quiz.html" class="btn">Symptom-Based Quiz</a>
     <a href="risk-calculator.html" class="btn">Vitamin Deficiency Risk Calculator</a>
     <a href="report.html" class="btn">Printable Report</a>
-    <a href="about.html" class="btn">About & References</a>
-  </nav>
+  </div>
   
   </div>
    
