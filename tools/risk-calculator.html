@@ -1,426 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vitamin Deficiency Risk Calculator 🌿</title>
-<link rel="stylesheet" href="../css/style.css">
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vitamin Deficiency Risk Calculator 🌿</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+    }
 
-  label {
-    display: block;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  select {
-    margin-top: 0.3rem;
-    padding: 0.4rem;
-    width: 100%;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #4caf50;
-    text-align: center;
-  }
-  button {
-    margin-top: 1.5rem;
-    background: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.9rem 1.7rem;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 3px 8px #27ae60;
-  }
+    select {
+      margin-top: 0.3rem;
+      padding: 0.4rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #4caf50;
+      text-align: center;
+    }
 
-  #result {
-    margin-top: 2rem;
-    background: #dcedc1;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 0 12px #4caf50;
-    font-size: 1.05rem;
-    line-height: 1.4;
-  }
-  ul {
-    padding-left: 1.2rem;
-  }
-  .vitamin-block {
-    background: #a8e6cf;
-    border-radius: 10px;
-    padding: 0.7rem 1rem;
-    box-shadow: 0 2px 5px #76c893;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    text-align: left;
-  }
-  .vitamin-icon {
-    font-size: 3rem;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .vitamin-content {
-    flex-grow: 1;
-  }
-  .vitamin-content strong {
-    font-size: 1.2rem;
-    color: #205522;
-  }
-  .section-title {
-    font-weight: bold;
-    margin-top: 0.4rem;
-    color: #2a5d2a;
-  }
-  .food-list {
-    margin-left: 1rem;
-  }
+    button {
+      margin-top: 1.5rem;
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.7rem;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: 0 3px 8px #27ae60;
+    }
+
+    #result {
+      margin-top: 2rem;
+      background: #dcedc1;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 12px #4caf50;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .vitamin-block {
+      background: #a8e6cf;
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      box-shadow: 0 2px 5px #76c893;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .vitamin-icon {
+      font-size: 3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .vitamin-content {
+      flex-grow: 1;
+    }
+
+    .vitamin-content strong {
+      font-size: 1.2rem;
+      color: #205522;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 0.4rem;
+      color: #2a5d2a;
+    }
+
+    .food-list {
+      margin-left: 1rem;
+    }
 
 
 
-  
-   /* Responsive */
+
+    /* Responsive */
     @media (max-width: 600px) {
-    
+
       .buttonbtn a {
         display: inline-block;
         margin: 0.5rem 0;
       }
-         button {
-      font-size: 1rem;
-      padding: 0.7rem;
-    }
-    .vitamin-icon {
-      font-size: 2.5rem;
-    }
-    }
-      select,
+
       button {
-        max-width: 100%;
+        font-size: 1rem;
+        padding: 0.7rem;
       }
-</style>
+
+      .vitamin-icon {
+        font-size: 2.5rem;
+      }
+    }
+
+    select,
+    button {
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Vitamin Deficiency Risk Calculator 🌿</h1>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
-<form id="quizForm">
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <label>
-    How often do you eat fruits and vegetables?
-    <select id="fruitsVeg" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="low">Rarely (0-1 days/week)</option>
-      <option value="medium">Sometimes (2-4 days/week)</option>
-      <option value="high">Often (5+ days/week)</option>
-    </select>
-  </label>
+      <ul id="navLinks">
+        <li><a href="../index.html" class="active">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Language ▼</a>
+          <div class="dropdown-content">
+            <!--
+            <a href="Ku/ku_index.html">Kurdish</a>
+            <a href="ar/ar_index.html">Arabic</a>
+            <a href="fr/fr_index.html">French</a>
+            <a href="sp/sp_index.html">Spanish</a>
+            <a href="po/po_index.html">Polish</a>
+            <a href="it/it_index.html">Italian</a>
+            <a href="ch/ch_index.html">Chinese</a>
+            <a href="ge/ge_index.html">German</a>
+            -->
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main content -->
+  <div class="container">
+    <h1>Vitamin Deficiency Risk Calculator 🌿</h1>
 
-  <label>
-    How much time do you spend in sunlight daily?
-    <select id="sunlight" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="low">Less than 10 minutes</option>
-      <option value="medium">10 to 30 minutes</option>
-      <option value="high">More than 30 minutes</option>
-    </select>
-  </label>
+    <form id="quizForm">
 
-  <label>
-    What is your diet preference?
-    <select id="diet" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="omnivore">Omnivore(eat meat and plants)</option>
-      <option value="vegetarian">Vegetarian(No Meat or Fish, but may eat Cheese, Pizza, Pasta with Tomato Sauce, Omelet)</option>
-      <option value="vegan">Vegan(No Animal Products at All; Fruits, Vegetables, Grains like Rice, Oats, Bread)</option>
-    </select>
-  </label>
+      <label>
+        How often do you eat fruits and vegetables?
+        <select id="fruitsVeg" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="low">Rarely (0-1 days/week)</option>
+          <option value="medium">Sometimes (2-4 days/week)</option>
+          <option value="high">Often (5+ days/week)</option>
+        </select>
+      </label>
 
-  <label>
-    Do you exercise or stay physically active regularly?
-    <select id="exercise" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes, regularly</option>
-      <option value="no">No, rarely</option>
-    </select>
-  </label>
+      <label>
+        How much time do you spend in sunlight daily?
+        <select id="sunlight" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="low">Less than 10 minutes</option>
+          <option value="medium">10 to 30 minutes</option>
+          <option value="high">More than 30 minutes</option>
+        </select>
+      </label>
 
-  <label>
-    Do you consume dairy or fortified plant milk products regularly?
-    <select id="dairy" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </label>
+      <label>
+        What is your diet preference?
+        <select id="diet" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="omnivore">Omnivore(eat meat and plants)</option>
+          <option value="vegetarian">Vegetarian(No Meat or Fish, but may eat Cheese, Pizza, Pasta with Tomato Sauce,
+            Omelet)</option>
+          <option value="vegan">Vegan(No Animal Products at All; Fruits, Vegetables, Grains like Rice, Oats, Bread)
+          </option>
+        </select>
+      </label>
 
-  <label>
-    How often do you eat fish or seafood?
-    <select id="fish" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="often">Often (3+ times/week)</option>
-      <option value="sometimes">Sometimes (1-2 times/week)</option>
-      <option value="rarely">Rarely or never</option>
-    </select>
-  </label>
+      <label>
+        Do you exercise or stay physically active regularly?
+        <select id="exercise" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes, regularly</option>
+          <option value="no">No, rarely</option>
+        </select>
+      </label>
 
-  <!-- New Questions -->
+      <label>
+        Do you consume dairy or fortified plant milk products regularly?
+        <select id="dairy" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
 
-  <label>
-    Do you have any digestive or absorption problems (e.g., celiac disease, IBS, gastric surgery)?
-    <select id="digestiveIssues" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </label>
+      <label>
+        How often do you eat fish or seafood?
+        <select id="fish" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="often">Often (3+ times/week)</option>
+          <option value="sometimes">Sometimes (1-2 times/week)</option>
+          <option value="rarely">Rarely or never</option>
+        </select>
+      </label>
 
-  <label>
-    Do you take medications that may affect vitamin absorption (e.g., antacids, metformin)?
-    <select id="medications" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </label>
+      <!-- New Questions -->
 
-  <label>
-    Are you pregnant or breastfeeding?
-    <select id="pregnant" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </label>
+      <label>
+        Do you have any digestive or absorption problems (e.g., celiac disease, IBS, gastric surgery)?
+        <select id="digestiveIssues" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
 
- <label>
-  How often do you eat fortified foods? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola)
-  <select id="fortifiedFoods" required>
-    <option value="" disabled selected>Select one</option>
-    <option value="often">Often</option>
-    <option value="sometimes">Sometimes</option>
-    <option value="rarely">Rarely or never</option>
-  </select>
-</label>
+      <label>
+        Do you take medications that may affect vitamin absorption (e.g., antacids, metformin)?
+        <select id="medications" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
 
-<label>
-  How often do you take vitamin or mineral supplements? (e.g., Omega-3 softgels, multivitamins)
-  <select id="supplements" required>
-    <option value="" disabled selected>Select one</option>
-    <option value="often">Often</option>
-    <option value="sometimes">Sometimes</option>
-    <option value="rarely">Rarely or never</option>
-  </select>
-</label>
+      <label>
+        Are you pregnant or breastfeeding?
+        <select id="pregnant" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>
+        How often do you eat fortified foods? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola)
+        <select id="fortifiedFoods" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="often">Often</option>
+          <option value="sometimes">Sometimes</option>
+          <option value="rarely">Rarely or never</option>
+        </select>
+      </label>
+
+      <label>
+        How often do you take vitamin or mineral supplements? (e.g., Omega-3 softgels, multivitamins)
+        <select id="supplements" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="often">Often</option>
+          <option value="sometimes">Sometimes</option>
+          <option value="rarely">Rarely or never</option>
+        </select>
+      </label>
 
 
-  <label>
-    How often do you eat whole grains?(like whole wheat bread, oats, brown rice)
-    <select id="wholeGrains" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="often">Often</option>
-      <option value="sometimes">Sometimes</option>
-      <option value="rarely">Rarely or never</option>
-    </select>
-  </label>
+      <label>
+        How often do you eat whole grains?(like whole wheat bread, oats, brown rice)
+        <select id="wholeGrains" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="often">Often</option>
+          <option value="sometimes">Sometimes</option>
+          <option value="rarely">Rarely or never</option>
+        </select>
+      </label>
 
-  <label>
-    Do you smoke or consume alcohol regularly?
-    <select id="smokeAlcohol" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </label>
+      <label>
+        Do you smoke or consume alcohol regularly?
+        <select id="smokeAlcohol" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
 
-  <button type="submit">Check My Risk</button>
-</form>
+      <button type="submit">Check My Risk</button>
+    </form>
 
-<div id="result" style="display:none;"></div>
-<div class="buttonbtn">
-    <a href="../index.html" class="btn">Back Home</a>
-    <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+    <div id="result" style="display:none;"></div>
+    <div class="buttonbtn">
+      <a href="../index.html" class="btn">Back Home</a>
+      <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+    </div>
   </div>
-  </div>
 
-<script>
-  const vitaminsData = {
-  "Vitamin A": {
-    icon: "🥕",
-    description: "Essential for healthy vision, immune strength, and skin regeneration.",
-    functions: "Supports clear eyesight, healthy skin, and immune defense.",
-    symptoms: ["Night blindness", "Dry or rough skin", "Frequent infections", "Delayed wound healing"],
-    foods: {
-      vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale", "Pumpkin", "Red Bell Peppers"],
-      fruits: ["Mango", "Cantaloupe", "Apricot", "Watermelon"],
-      animal: ["Liver", "Eggs", "Butter"]
-    },
-    plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
-    dailyIntake: "Best obtained from liver, carrots, sweet potatoes, and leafy greens."
-  },
-  "Vitamin B12": {
-    icon: "🍳",
-    description: "Supports nerve health and helps create red blood cells.",
-    functions: "Vital for brain function, energy levels, and blood production.",
-    symptoms: ["Fatigue", "Tingling in hands or feet", "Poor memory", "Dizziness"],
-    foods: {
-      animal: ["Eggs", "Fish (salmon, tuna)", "Milk", "Cheese", "Yogurt"]
-    },
-    plants: ["None (naturally found only in animal-based foods)"] ,
-    dailyIntake: " Important for vegetarians and vegans to consume fortified plant foods or B12-rich animal products."
-  },
-  "Vitamin C": {
-    icon: "🍊",
-    description: "Boosts immune function, skin repair, and collagen production.",
-    functions: "Helps heal wounds, maintain skin health, and strengthen immunity.",
-    symptoms: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
-    foods: {
-      fruits: ["Oranges", "Strawberries", "Kiwi", "Guava", "Papaya", "Pineapple"],
-      vegetables: ["Bell Peppers", "Broccoli", "Brussels Sprouts", "Tomatoes"]
-    },
-    plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
-    dailyIntake: " Get from citrus fruits, berries, peppers, and cruciferous vegetables."
-  },
-  "Vitamin D": {
-    icon: "☀️",
-    description: "Helps absorb calcium and supports strong bones and immune health.",
-    functions: "Essential for bone growth, muscle function, and immune defense.",
-    symptoms: ["Bone pain", "Weak muscles", "Low energy", "Frequent illness"],
-    foods: {
-      animal: ["Fatty fish (salmon, mackerel)", "Egg yolks", "Liver"],
-      plants: ["Sunlight exposure (natural source)"]
-    },
-    plants: ["Sunlight exposure"],
-    dailyIntake: " Primary sources include oily fish and sensible sun exposure."
-  },
-  "Vitamin K": {
-    icon: "🥬",
-    description: "Crucial for blood clotting and maintaining bone health.",
-    functions: "Helps wounds heal and supports strong bones.",
-    symptoms: ["Excessive bleeding", "Easy bruising", "Weak bones"],
-    foods: {
-      vegetables: ["Kale", "Spinach", "Broccoli", "Brussels Sprouts", "Collard Greens", "Turnip Greens"]
-    },
-    plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
-    dailyIntake: " Best from dark leafy greens like kale and spinach."
-  },
-  "Iron": {
-    icon: "🥩",
-    description: "Carries oxygen in the blood and prevents tiredness.",
-    functions: "Supports energy levels, red blood cell creation, and focus.",
-    symptoms: ["Tiredness", "Pale skin", "Headaches", "Shortness of breath"],
-    foods: {
-      animal: ["Red meat", "Liver", "Chicken", "Turkey", "Fish"],
-      vegetables: ["Spinach", "Lentils", "Beans", "Tofu", "Pumpkin seeds"]
-    },
-    plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
-    dailyIntake: " Include red meat, beans, spinach, and seeds in meals."
-  },
-  "Calcium": {
-    icon: "🦴",
-    description: "Builds strong bones and supports heart and muscle function.",
-    functions: "Maintains bone structure, supports nerve function and muscle contraction.",
-    symptoms: ["Muscle cramps", "Weak bones", "Tooth decay", "Numbness"],
-    foods: {
-      animal: ["Milk", "Cheese", "Yogurt"],
-      vegetables: ["Broccoli", "Kale", "Bok Choy", "Almonds", "Sesame seeds"]
-    },
-    plants: ["Almond tree", "Broccoli plant", "Kale leaves"],
-    dailyIntake: " Obtain from dairy, leafy greens, and calcium-rich nuts/seeds."
-  }
-};
+  <!-- Footer -->
+  <footer>
+    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Last updated: June 2025</p>
+    &copy; <a class="border-bottom" href="index.html">Vitamin Health Helper</a>, All Right Reserved.
+    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script>
+    const vitaminsData = {
+      "Vitamin A": {
+        icon: "🥕",
+        description: "Essential for healthy vision, immune strength, and skin regeneration.",
+        functions: "Supports clear eyesight, healthy skin, and immune defense.",
+        symptoms: ["Night blindness", "Dry or rough skin", "Frequent infections", "Delayed wound healing"],
+        foods: {
+          vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale", "Pumpkin", "Red Bell Peppers"],
+          fruits: ["Mango", "Cantaloupe", "Apricot", "Watermelon"],
+          animal: ["Liver", "Eggs", "Butter"]
+        },
+        plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
+        dailyIntake: "Best obtained from liver, carrots, sweet potatoes, and leafy greens."
+      },
+      "Vitamin B12": {
+        icon: "🍳",
+        description: "Supports nerve health and helps create red blood cells.",
+        functions: "Vital for brain function, energy levels, and blood production.",
+        symptoms: ["Fatigue", "Tingling in hands or feet", "Poor memory", "Dizziness"],
+        foods: {
+          animal: ["Eggs", "Fish (salmon, tuna)", "Milk", "Cheese", "Yogurt"]
+        },
+        plants: ["None (naturally found only in animal-based foods)"],
+        dailyIntake: " Important for vegetarians and vegans to consume fortified plant foods or B12-rich animal products."
+      },
+      "Vitamin C": {
+        icon: "🍊",
+        description: "Boosts immune function, skin repair, and collagen production.",
+        functions: "Helps heal wounds, maintain skin health, and strengthen immunity.",
+        symptoms: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
+        foods: {
+          fruits: ["Oranges", "Strawberries", "Kiwi", "Guava", "Papaya", "Pineapple"],
+          vegetables: ["Bell Peppers", "Broccoli", "Brussels Sprouts", "Tomatoes"]
+        },
+        plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
+        dailyIntake: " Get from citrus fruits, berries, peppers, and cruciferous vegetables."
+      },
+      "Vitamin D": {
+        icon: "☀️",
+        description: "Helps absorb calcium and supports strong bones and immune health.",
+        functions: "Essential for bone growth, muscle function, and immune defense.",
+        symptoms: ["Bone pain", "Weak muscles", "Low energy", "Frequent illness"],
+        foods: {
+          animal: ["Fatty fish (salmon, mackerel)", "Egg yolks", "Liver"],
+          plants: ["Sunlight exposure (natural source)"]
+        },
+        plants: ["Sunlight exposure"],
+        dailyIntake: " Primary sources include oily fish and sensible sun exposure."
+      },
+      "Vitamin K": {
+        icon: "🥬",
+        description: "Crucial for blood clotting and maintaining bone health.",
+        functions: "Helps wounds heal and supports strong bones.",
+        symptoms: ["Excessive bleeding", "Easy bruising", "Weak bones"],
+        foods: {
+          vegetables: ["Kale", "Spinach", "Broccoli", "Brussels Sprouts", "Collard Greens", "Turnip Greens"]
+        },
+        plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
+        dailyIntake: " Best from dark leafy greens like kale and spinach."
+      },
+      "Iron": {
+        icon: "🥩",
+        description: "Carries oxygen in the blood and prevents tiredness.",
+        functions: "Supports energy levels, red blood cell creation, and focus.",
+        symptoms: ["Tiredness", "Pale skin", "Headaches", "Shortness of breath"],
+        foods: {
+          animal: ["Red meat", "Liver", "Chicken", "Turkey", "Fish"],
+          vegetables: ["Spinach", "Lentils", "Beans", "Tofu", "Pumpkin seeds"]
+        },
+        plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
+        dailyIntake: " Include red meat, beans, spinach, and seeds in meals."
+      },
+      "Calcium": {
+        icon: "🦴",
+        description: "Builds strong bones and supports heart and muscle function.",
+        functions: "Maintains bone structure, supports nerve function and muscle contraction.",
+        symptoms: ["Muscle cramps", "Weak bones", "Tooth decay", "Numbness"],
+        foods: {
+          animal: ["Milk", "Cheese", "Yogurt"],
+          vegetables: ["Broccoli", "Kale", "Bok Choy", "Almonds", "Sesame seeds"]
+        },
+        plants: ["Almond tree", "Broccoli plant", "Kale leaves"],
+        dailyIntake: " Obtain from dairy, leafy greens, and calcium-rich nuts/seeds."
+      }
+    };
 
 
 
- document.getElementById("quizForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+    document.getElementById("quizForm").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-  const fruitsVeg = document.getElementById("fruitsVeg").value;
-  const sunlight = document.getElementById("sunlight").value;
-  const diet = document.getElementById("diet").value;
-  const exercise = document.getElementById("exercise").value;
-  const dairy = document.getElementById("dairy").value;
-  const fish = document.getElementById("fish").value;
+      const fruitsVeg = document.getElementById("fruitsVeg").value;
+      const sunlight = document.getElementById("sunlight").value;
+      const diet = document.getElementById("diet").value;
+      const exercise = document.getElementById("exercise").value;
+      const dairy = document.getElementById("dairy").value;
+      const fish = document.getElementById("fish").value;
 
-  const digestiveIssues = document.getElementById("digestiveIssues").value;
-  const medications = document.getElementById("medications").value;
-  const pregnant = document.getElementById("pregnant").value;
-  const fortifiedFoods = document.getElementById("fortifiedFoods").value;
-  const supplements = document.getElementById("supplements").value;
-  const wholeGrains = document.getElementById("wholeGrains").value;
-  const smokeAlcohol = document.getElementById("smokeAlcohol").value;
+      const digestiveIssues = document.getElementById("digestiveIssues").value;
+      const medications = document.getElementById("medications").value;
+      const pregnant = document.getElementById("pregnant").value;
+      const fortifiedFoods = document.getElementById("fortifiedFoods").value;
+      const supplements = document.getElementById("supplements").value;
+      const wholeGrains = document.getElementById("wholeGrains").value;
+      const smokeAlcohol = document.getElementById("smokeAlcohol").value;
 
-  let risks = [];
+      let risks = [];
 
-  // Diet and habits
-  if (fruitsVeg === "low") {
-    risks.push("Vitamin C", "Vitamin K", "Vitamin A");
-  } else if (fruitsVeg === "medium") {
-    risks.push("Vitamin K");
-  }
+      // Diet and habits
+      if (fruitsVeg === "low") {
+        risks.push("Vitamin C", "Vitamin K", "Vitamin A");
+      } else if (fruitsVeg === "medium") {
+        risks.push("Vitamin K");
+      }
 
-  if (sunlight === "low" && (fish === "rarely" || dairy === "no")) {
-    risks.push("Vitamin D");
-  }
+      if (sunlight === "low" && (fish === "rarely" || dairy === "no")) {
+        risks.push("Vitamin D");
+      }
 
-  if (diet === "vegan") {
-    risks.push("Vitamin B12");
-  }
+      if (diet === "vegan") {
+        risks.push("Vitamin B12");
+      }
 
-  if ((diet === "vegetarian" || diet === "vegan") && fish === "rarely") {
-    risks.push("Iron");
-  }
+      if ((diet === "vegetarian" || diet === "vegan") && fish === "rarely") {
+        risks.push("Iron");
+      }
 
-  if (dairy === "no") {
-    risks.push("Calcium");
-  }
+      if (dairy === "no") {
+        risks.push("Calcium");
+      }
 
-  // Medical conditions
-  if (digestiveIssues === "yes") {
-    risks.push("Vitamin B12", "Iron", "Calcium", "Vitamin D");
-  }
+      // Medical conditions
+      if (digestiveIssues === "yes") {
+        risks.push("Vitamin B12", "Iron", "Calcium", "Vitamin D");
+      }
 
-  if (medications === "yes") {
-    risks.push("Vitamin B12", "Vitamin D");
-  }
+      if (medications === "yes") {
+        risks.push("Vitamin B12", "Vitamin D");
+      }
 
-  if (pregnant === "yes") {
-    risks.push("Iron", "Calcium", "Vitamin D");
-  }
+      if (pregnant === "yes") {
+        risks.push("Iron", "Calcium", "Vitamin D");
+      }
 
-  // Fortified food & supplement habits
-  if (fortifiedFoods === "rarely" && diet === "vegan") {
-    risks.push("Iron");
-  }
+      // Fortified food & supplement habits
+      if (fortifiedFoods === "rarely" && diet === "vegan") {
+        risks.push("Iron");
+      }
 
-  if (supplements === "rarely" && (diet === "vegetarian" || diet === "vegan")) {
-    risks.push("Vitamin B12");
-  }
+      if (supplements === "rarely" && (diet === "vegetarian" || diet === "vegan")) {
+        risks.push("Vitamin B12");
+      }
 
-  // Whole grains
-  if (wholeGrains === "rarely") {
-    risks.push("Iron");
-  }
+      // Whole grains
+      if (wholeGrains === "rarely") {
+        risks.push("Iron");
+      }
 
-  // Smoking/alcohol
-  if (smokeAlcohol === "yes") {
-    risks.push("Vitamin C");
-  }
+      // Smoking/alcohol
+      if (smokeAlcohol === "yes") {
+        risks.push("Vitamin C");
+      }
 
-  // Clean output
-  risks = [...new Set(risks)].sort();
+      // Clean output
+      risks = [...new Set(risks)].sort();
 
-  const resultDiv = document.getElementById("result");
-  if (risks.length === 0) {
-    resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
-  } else {
-    let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
-    for (let vit of risks) {
-      const v = vitaminsData[vit];
-      html += `
+      const resultDiv = document.getElementById("result");
+      if (risks.length === 0) {
+        resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
+      } else {
+        let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
+        for (let vit of risks) {
+          const v = vitaminsData[vit];
+          html += `
         <div class="vitamin-block">
           <div class="vitamin-icon">${v.icon}</div>
           <div class="vitamin-content">
@@ -430,25 +489,26 @@
             <span class="section-title">Recommended daily intake:</span> ${v.dailyIntake}<br/>
             <span class="section-title">Natural food sources:</span><br/>
             ${Object.entries(v.foods).map(([category, items]) =>
-              `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
-            ).join("")}
+            `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
+          ).join("")}
             <span class="section-title">Plants:</span> ${v.plants.join(", ")}
           </div>
         </div>
       `;
+        }
+        html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
+        resultDiv.innerHTML = html;
+      }
+
+      resultDiv.style.display = "block";
+    });
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
-    html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
-    resultDiv.innerHTML = html;
-  }
 
-  resultDiv.style.display = "block";
-});
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-</script>
+  </script>
 
 </body>
+
 </html>
