@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دیاریکردنی کەمی ڤیتامین</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    label {
+      display: block;
+      font-size: 1rem;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    select,
+    button {
+      max-width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="ku_index.html" class="active">سەرەتا</a></li>
+        <li><a href="ku_product.html">بەرهەمهێنان</a></li>
+        <li><a href="ku_about.html">دەربارەی</a></li>
+        <li><a href="ku_contact.html">پەیوەندی</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">زمان ▼</a>
+          <div class="dropdown-content">
+            <a href="../index.html">ئینگلیزی</a>
+            <!-- <a href="../ar/ar_index.html">عەرەبی</a>
+            <a href="../fr/fr_index.html">فەرەنسی</a>
+            <a href="../sp/sp_index.html">ئیسپانی</a>
+            <a href="../po/po_index.html">پۆڵەندی</a>
+            <a href="../it/it_index.html">ئیتاڵی</a>
+            <a href="../ch/ch_index.html">چینی</a>
+            <a href="../ge/ge_index.html">ئەڵمانی</a> -->
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main content -->
+  <div class="container">
+    <h1>کەمیی ڤیتامین دیاری بکە</h1>
+    <p>ڤیتامینێک لە لیستەکەی خوارەوە هەڵبژێرە بۆ وەرگرتنی پێشنیار بۆ خواردنی سروشتی و ڕووەکەکان و وەرزش و بەرکەوتنی
+      تیشکی خۆر.</p>
+
+    <select id="vitaminSelect" aria-label="Select Vitamin">
+      <option value="">-- ڤیتامین هەڵبژێرە --</option>
+      <option value="vitaminA">ڤیتامین A</option>
+      <option value="vitaminB1">ڤیتامین B1 (تیامین)</option>
+      <option value="vitaminB2">ڤیتامین B2 (ڕیبۆفلاڤین)</option>
+      <option value="vitaminB3">ڤیتامین B3 (نیاسین)</option>
+      <option value="vitaminB5">ڤیتامین B5 (ترشی پانتۆثنیک)</option>
+      <option value="vitaminB6">ڤیتامین B6 (پیریدۆکسین)</option>
+      <option value="vitaminB7">ڤیتامین B7 (بیۆتین)</option>
+      <option value="vitaminB9">ڤیتامین B9 (فۆلات)</option>
+      <option value="vitaminB12">ڤیتامین B12 (کۆبالامین)</option>
+      <option value="vitaminC">ڤیتامین C</option>
+      <option value="vitaminD">ڤیتامین D</option>
+      <option value="vitaminE">ڤیتامین E</option>
+      <option value="vitaminK">ڤیتامین K</option>
+    </select>
+
+    <section id="suggestions" aria-live="polite" class="suggestions-container">
+      <!-- Suggestions will appear here dynamically -->
+    </section>
+
+
+    <div class="buttonbtn">
+      <a href="ku_index.html" class="btn">گەڕانەوە بۆ سەرەتا</a>
+      <a href="ku_quiz.html" class="btn">بڕۆ بۆ تاقیکردنەوەی نیشانەکان</a>
+    </div>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>دروستکراوە لەلایەن <a href="https://ismael-software.vercel.app/" target="_blank">نوێژیان</a></p>
+    <p>دوایین نوێکردنەوە: تەممووزی 2025</p>
+    &copy; <a class="border-bottom" href="">یارمەتیدەری تەندروستی ڤیتامین</a>، هەموو مافەکان پارێزراون. دیزاین کراوە
+    لەلایەن<a class="border-bottom" href="https://ismael-software.vercel.app/">نوێژیان</a>
+    </p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+
+
+
+  <script>const vitaminData = {
+      vitaminA: {
+        name: "ڤیتامین A  – بۆ تەندروستی بینین و پێست و سیستەمی بەرگری",
+        foods: ["Carrots 🥕", "Sweet Potatoes 🍠", "Spinach 🌿", "Kale 🥬", "Mango 🥭", "Pumpkin 🎃", "Red Bell Peppers 🌶️", "Apricots"],
+        plants: ["Carrot Plant", "Spinach Leaves", "Kale", "Pumpkin Vine"],
+        workouts: ["پیاسەکردن لە دەرەوە", "ڕاهێنانەکانی پشوودانی چاو"],
+        sunlight: "بەرکەوتنی تیشکی خۆر لە بەیانیان بۆ ماوەی 10 بۆ 15 خولەک دەبێتە هۆی بەهێزکردنی میتابولیزمی ڤیتامین A و باشترکردنی تەندروستی چاو.",
+        benefits: "گرنگە بۆ بینایی تەندروست، نوێبوونەوەی پێست، بەهێزی بەرگری و گەشەی خانەکان.",
+        deficiency: ["Night blindness", "Dry or rough skin", "Frequent infections", "Delayed wound healing"],
+        richSources: ["Beef liver", "Carrot juice", "Spinach"],
+        foodTiming: "بە چەوری تەندروست هەڵدەمژرێت (لەگەڵ ئەڤۆکادۆ یان گوێز بەکار بهێنرێت)",
+        prepTips: "سەوزە بە هەڵم هەڵم بکە یان لەگەڵ زەیتی زەیتوون بەکاریان بهێنە بۆ بەهێزکردنی هەڵمژین.",
+        tipsForVegetarians: "تەرکیز لەسەر سەوزە و میوەی پڕ لە بێتا کارۆتین بکە، چونکە جەستەت دەیگۆڕێت بۆ ڤیتامین A.",
+        kidsNote: "بۆ گەشەی منداڵان و گەشەی بینایی گرنگە سەوزەی پرتەقاڵی و سەوز لە خۆراکی ڕۆژانەیاندا دابنێن.",
+        pregnancyNote: "دوورکەوتنەوە لە خواردنی زۆر تەواوکەری ڤیتامین A. لە جیاتی ئەوە، جەخت لەسەر خواردنی سروشتی بکە بۆ دڵنیابوون لە پاڵپشتی سەلامەت بۆ گەشەی کۆرپەلە.",
+        sunSafetyTip: "لە نیوەڕۆدا لە تیشکی خۆر دوور بکەوە. تیشکی خۆر لە بەیانیان یارمەتی بەرهەمهێنانی ڤیتامین A دەدات بەبێ ئەوەی زیان بە پێست بگەیەنێت.",
+        workoutSynergy: "ڕاهێنان لەسەر چاو سوودەکانی ڤیتامین A بۆ بینایی باشتر و پشوودان باشتر دەکات.",
+        funFact: "ئایا دەزانیت؟ پەتاتەی شیرین ڕێژەی ڤیتامین A زیاتری تێدایە لە گێزەر بە بەراورد بە هەر ژەمێک!"
+      },
+      vitaminB1: {
+        name: "ڤیتامین B1 (تیامین) – بۆ ووزە و کاری دەمار",
+        foods: ["Whole Grains 🌾", "Sunflower Seeds 🌻", "Beans 🫘", "Green Peas", "Flaxseeds"],
+        plants: ["Sunflower", "Pea Plant"],
+        workouts: ["Cardio for energy metabolism", "Brisk walking", "Dancing"], // no yoga
+        sunlight: "تیشکی خۆری ڕۆژانە پشتگیری ئاستی وزە و مەزاجی گشتی دەکات.",
+        benefits: "بەرهەمهێنانی وزە زیاد دەکات، پشتگیری کاری دەمارەکان دەکات، تەندروستی دڵ بەهێز دەکات و یارمەتی گرژبوونی ماسولکەکان دەدات.",
+        deficiency: ["Fatigue", "Muscle weakness", "Nerve damage", "Poor memory"],
+        richSources: ["Whole grains", "Sunflower seeds"], // pork removed
+        foodTiming: "خواردنی هاوسەنگ بخۆ و کحول بپارێزە، چونکە هەڵمژین لاواز دەکات.",
+        prepTips: "خۆت لە زۆر کوڵاندنی دانەوێڵە و فاسۆلیا بەدوور بگرە بۆ ئەوەی ڤیتامین B1 بپارێزرێت.",
+        tipsForVegetarians: "دانەوێڵە تەواو و پاقلەمەنیەکان سەرچاوەی نایابن. دوورکەوتنەوە لە دانەوێڵە دەستکاریکراوەکان بۆ پاراستنی ڤیتامین B1.",
+        kidsNote: "بۆ وزە و گەشە گرنگە ئەو خۆراکانەی دەوڵەمەند بە ڤیتامین B1 لە ژەمەکانی منداڵانی چالاکدا بخرێنە ڕوو.",
+        pregnancyNote: "پاڵپشتی وزەی دایکان و گەشەی مێشکی کۆرپەلە دەکات.",
+        sunSafetyTip: "بەرکەوتنی گشتی تیشکی خۆر پاڵپشتی میتابولیزم دەکات بەڵام پاراستنی پێست دەپارێزێت.",
+        workoutSynergy: "ڕاهێنانی دڵ پێویستی بە وزە زیاد دەکات و یارمەتی بەکارهێنانی ڤیتامین B1 دەدات.",
+        funFact: "ئایا دەزانیت؟ خواردنە ترشێنراوەکانی وەک تێمپێ هەروەها سەرچاوەیەکی زۆر باشن بۆ ڤیتامین B1!"
+      },
+
+      vitaminB2: {
+        name: "ڤیتامین B2 (ڕیبۆفلاڤین) – یارمەتی هەرسکردنی خۆراک دەدات بۆ ووزە",
+        foods: ["Almonds 🌰", "Spinach 🥬", "Eggs 🥚", "Milk 🥛", "Mushrooms 🍄", "Quinoa"],
+        plants: ["Spinach", "Mushroom Caps"],
+        workouts: ["Light aerobic exercises", "Stretching"],
+        sunlight: "تیشکی خۆر یارمەتی وزەی خانە و کاری پێست دەدات",
+        benefits: "یارمەتی گۆڕینی خۆراک دەدات بۆ وزە و پاڵپشتی تەندروستی پێست و چاو و دەمارەکان دەکات.",
+        deficiency: ["Cracks at mouth corners", "Sore throat", "Red eyes", "Fatigue"],
+        richSources: ["Dairy products", "Eggs", "Spinach", "Almonds"],
+        foodTiming: "باشترە لە کاتی ژەمەکاندا بخورێت کە پرۆتینی تێدایە.",
+        prepTips: "دوورکەوتنەوە لە بەرکەوتنی درێژخایەن لەگەڵ ڕووناکی کە ریبۆفلاڤین تێکدەشکێنێت.",
+        tipsForVegetarians: "شیرەمەنی، هێلکە و سەرچاوەی ڕووەکی وەک سپێناخ و بادام یارمەتی ڕووەکخۆران دەدەن لە پڕکردنەوەی پێداویستییەکانی B2.",
+        kidsNote: "پاڵپشتی گەشە و تەندروستی پێست دەکات. خواردنی دەوڵەمەند بە B2 بە بەردەوامی لەخۆ دەگرێت.",
+        pregnancyNote: "گرنگە بۆ گەشەی کۆرپەلە و میتابولیزمی وزە.",
+        sunSafetyTip: "بەرکەوتنی بەردەوامی تیشکی خۆر بۆ پێست و ئاستی ووزە سوودبەخشە، بەڵام گرنگە ئەگەر پێویست بێت خۆپاراستن لە خۆر بەکار بهێنرێت.",
+        workoutSynergy: "وەرزشی ئایرۆبیک سووک یارمەتیدەرە بۆ باشترکردنی بەکارهێنانی ڤیتامین B2.",
+        funFact: "ئایا دەزانیت؟ ڕیبۆفلاڤین دەبێتە هۆی زەرد بوونی شیر و میز کاتێک بە بڕێکی زۆر بەکار بهێنرێت!"
+      },
+      vitaminB3: {
+        name: "ڤیتامین B3 (نیاسین) – بۆ میتابۆلیزم و تەندروستی پێست",
+        foods: ["Chicken 🍗", "Tuna 🐟", "Peanuts 🥜", "Brown Rice 🍚", "Whole Wheat Bread 🍞", "Avocados"],
+        plants: ["Peanut Plant", "Avocado Tree"],
+        workouts: ["Endurance training", "Jogging", "Rowing"],
+        sunlight: "تیشکی خۆری سروشتی یارمەتی ڕێڕەوی وزە دەدات لە لەش و دڵەڕاوکێ کەم دەکاتەوە.",
+        benefits: "پاڵپشتی تەندروستی پێست، کۆئەندامی دەمار، کۆنتڕۆڵکردنی کۆلیسترۆل و میتابولیزمی وزە دەکات.",
+        deficiency: ["Pellagra (dermatitis, diarrhea, dementia)", "Fatigue", "Depression"],
+        richSources: ["Meats", "Peanuts", "Whole grains"],
+        foodTiming: "ئەم دەرمانە لەگەڵ ژەمەکان بەکار بهێنە بۆ کەمکردنەوەی کاریگەرییە لاوەکییەکانی سووربوونەوە.",
+        prepTips: "برژاندنی پاقلەی سودانی نیاسین بە شێوەیەکی کاریگەر دەپارێزێت.",
+        tipsForVegetarians: "تەرکیز لەسەر خواردنی پاقلەی سودانی و برنجی قاوەیی و دانەوێڵە و ئەڤۆکادۆ بکە بۆ پڕکردنەوەی پێداویستییەکانی B3.",
+        kidsNote: "بۆ تەندروستی پێست و وزە گرنگە جۆرەها دانەوێڵە و پاقلەمەنی تێدابێت.",
+        pregnancyNote: "پاڵپشتی میتابولیزمی وزە و گەشەی کۆئەندامی دەماری کۆرپەلە دەکات.",
+        sunSafetyTip: "تیشکی خۆر وزە دابین دەکات بەڵام دەبێت پێستت بپارێزیت لە کاتی بەرکەوتنی درێژخایەن.",
+        workoutSynergy: "ڕاهێنانی خۆڕاگری بەرهەمهێنانی وزە زیاد دەکات کە پشت بە ڤیتامین B3 دەبەستێت.",
+        funFact: "ئایا دەزانیت؟ نیاسین جارێک بۆ کۆنترۆڵکردنی بەرزبوونەوەی ئاستی کۆلیسترۆل بەکار دەهات!"
+      },
+      vitaminB5: {
+        name: "ڤیتامین B5 (ترشی پانتۆثنیک) – بۆ به رهه مهێنانی هۆرمۆنات و وزه",
+        foods: ["Avocado 🥑", "Eggs 🥚", "Mushrooms 🍄", "Sweet Potatoes 🍠", "Broccoli 🥦", "Cauliflower"],
+        plants: ["Avocado Tree", "Mushrooms", "Sweet Potato Vine"],
+        workouts: ["Resistance training", "Stretch-based exercises"],
+        sunlight: "تیشکی خۆری ڕێک و پێک میتابولیزم و کاری ئەدرینال بەهێز دەکات.",
+        benefits: "گرنگە بۆ بەرهەمهێنانی خانەکانی خوێن و دروستکردنی هۆرمۆنەکان و گۆڕینی خۆراک بۆ وزە.",
+        deficiency: ["Fatigue", "Headache", "Numbness", "Digestive issues"],
+        richSources: ["Avocado", "Eggs", "Mushrooms"],
+        foodTiming: "ژەمی هاوسەنگ بخۆ بۆ هەڵمژینی باشتر.",
+        prepTips: "کەمترین چێشتلێنان ڤیتامین B5 دەپارێزێت",
+        tipsForVegetarians: "ئەڤۆکادۆ، قارچک و پەتاتەی شیرین سەرچاوەی نایابی ڕووەکەکانن.",
+        kidsNote: "پاڵپشتی وزە و گەشەی تەندروست دەکات. سەوزەی ڕەنگاوڕەنگ لەخۆ دەگرێت",
+        pregnancyNote: "یارمەتی بەرهەمهێنانی هۆرمۆنەکان و گەشەی کۆرپەلە دەدات.",
+        sunSafetyTip: "بەرکەوتنی مامناوەند لەگەڵ خۆر بۆ تەندروستی ئەدریناڵ سوودبەخشە. لەگەڵ ئەوەشدا، گرنگە خۆت لە بەرکەوتنی زۆر دوور بخەیتەوە.",
+        workoutSynergy: "ڕاهێنانەکانی هێز پێویستی بە ڤیتامین B5 لە میتابولیزمی وزەدا زیاد دەکات.",
+        funFact: "ئایا دەزانیت؟ ناوەکە 'پانتۆثنیک' لە وشەی یۆنانی هاتووە بۆ'لە هەموو شوێنێک' چونکە لە ژمارەیەکی زۆر خۆراکدا هەیە!"
+      },
+      vitaminB6: {
+        name: "ڤیتامین B6 (پیریدۆکسین) – بۆ گەشەکردنی مێشک و پشتگیری بەرگری",
+        foods: ["Bananas 🍌", "Chicken 🍗", "Potatoes 🥔", "Spinach 🌿", "Sunflower Seeds 🌻", "Avocados"],
+        plants: ["Banana Plant", "Spinach"],
+        workouts: ["Strength training", "Balance-focused workouts", "Core strengthening"],
+        sunlight: "پاڵپشتی بەرهەمهێنانی سیرۆتۆنین دەکات و ڕوونی مێشک بەهێز دەکات.",
+        benefits: "یارمەتی گەشەی مێشک دەدات، مەزاج جێگیر دەکات و یارمەتی دروستبوونی خڕۆکە سوورەکانی خوێن دەدات.",
+        deficiency: ["Depression", "Confusion", "Anemia", "Weakened immune function"],
+        richSources: ["Bananas", "Chicken", "Potatoes"],
+        foodTiming: "باشترین چێژ وەرگرتن لە کاتی نانخواردن",
+        prepTips: "چێشتلێنان لەوانەیە ڕێژەی B6 دابەزێنێت.; هەڵم باشتر دەیپارێزێت",
+        tipsForVegetarians: "سەرچاوەی ڕووەکەکانی وەک مۆز، سپێناخ و تۆوی گوڵەبەڕۆژە یارمەتیدەرن لە پڕکردنەوەی پێداویستییە خۆراکییەکان.",
+        kidsNote: "گرنگە بۆ گەشەی مێشک و ڕێکخستنی مەزاج.",
+        pregnancyNote: "پاڵپشتی گەشەی مێشکی کۆرپەلە و مەزاجی دایک دەکات.",
+        sunSafetyTip: "تیشکی خۆر مەزاج و میتابولیزمی ڤیتامین B6 باشتر دەکات.; بەپێی پێویست پێستت بپارێزە.",
+        workoutSynergy: "ڕاهێنانی هێز و هاوسەنگی زیادەیەکی باشە بۆ پاڵپشتی B6 بۆ مێشک و ماسولکەکان.",
+        funFact: "ئایا دەزانیت؟ ڤیتامین B6 یارمەتی جەستەت دەدات لە بەرهەمهێنانی دەمارە گوێزەرەکانی وەک سیرۆتۆنین و دۆپامین!"
+      },
+      vitaminB7: {
+        name: "ڤیتامین B7 (بیۆتین) – بۆ قژ و پێست و نینۆک",
+        foods: ["Egg Yolks 🥚", "Nuts 🌰", "Sweet Potatoes 🍠", "Seeds 🌱", "Cauliflower"],
+        plants: ["Sweet Potato Plant", "Nut Trees"],
+        workouts: ["General fitness routines", "Flexibility exercises", "Bodyweight training"],
+        sunlight: "تیشکی خۆر دەبێتە هۆی میتابولیزمی تەندروست و درەوشانەوەی پێست.",
+        benefits: "گرنگە بۆ تەندروستی قژ، پێست، نینۆک و یارمەتیدەرە لە بەرهەمهێنانی وزە.",
+        deficiency: ["Hair thinning", "Skin rash", "Brittle nails"],
+        richSources: ["Egg yolks", "Nuts", "Sweet potatoes"],
+        foodTiming: "لە کاتی ژەمەکاندا بەکاری بهێنە بۆ باشترین هەڵمژین.",
+        prepTips: "گوێز و تۆوی خاو ڕێژەیەکی زیاتری بایۆتینیان تێدایە.",
+        tipsForVegetarians: "گوێز، تۆو و پەتاتەی شیرین سەرچاوەیەکی باشی بایۆتین لە ڕووەکەکانەوە پێشکەش دەکەن.",
+        kidsNote: "پاڵپشتی تەندروستی پێست و قژ دەکات لە ماوەی گەشەکردنیاندا.",
+        pregnancyNote: "گرنگە بۆ تەندروستی پێست و وزە لە کاتی دووگیانیدا.",
+        sunSafetyTip: "بەرکەوتنی مامناوەند لەگەڵ خۆر بۆ تەندروستی پێست سوودبەخشە. لەگەڵ ئەوەشدا، گرنگە خۆت لە بەرکەوتنی زۆر دوور بخەیتەوە.",
+        workoutSynergy: "وەرزشی ڕێک و پێک یارمەتی بایۆتین دەدات لە میتابولیزم.",
+        funFact: "ئایا دەزانیت؟ هەندێک جار بیۆتین بە ڤیتامینێکی جوانی ناودەبرێت بەهۆی سوودەکانی بۆ قژ و نینۆکەکانی!"
+      },
+      vitaminB9: {
+        name: "ڤیتامین B9 (فۆلات/ترشی فۆلیک) – بۆ گەشەکردنی خانەکان و تەندروستی دووگیانی",
+        foods: ["Leafy Greens 🥬", "Lentils 🫘", "Asparagus 🌿", "Beets", "Citrus Fruits 🍋", "Okra"],
+        plants: ["Lentil Plant", "Leafy Greens", "Beet Plant"],
+        workouts: ["Gentle stretching", "Pilates"],
+        sunlight: "ڕووناکی سروشتی یارمەتیدەرە بۆ جێگیر هێشتنەوەی مەزاج و ڕوونی بیرکردنەوەت.",
+        benefits: "گرنگە بۆ چاککردنەوەی DNA، پاراستنی تەندروستی دووگیانی و دروستکردنی خڕۆکە سوورەکان.",
+        deficiency: ["Fatigue", "Mouth sores", "Poor growth", "Neural tube defects"],
+        richSources: ["Leafy greens", "Legumes", "Citrus fruits"],
+        foodTiming: "باشتر هەڵمژراوە لەگەڵ خواردنی دەوڵەمەند بە ڤیتامین سی",
+        prepTips: "خواردن بە سووکی خواردن یارمەتیدەرە بۆ پاراستنی ڕێژەی فۆلات. باشترە خۆت لە کوڵان بەدوور بگریت.",
+        tipsForVegetarians: "دەوڵەمەندە بە گەڵای سەوزە و پاقلەمەنیەکان، بە ئاسانی پێداویستییە خۆراکییەکان بە شێوەیەکی سروشتی پڕ دەکاتەوە.",
+        kidsNote: "گرنگە بۆ گەشەی جەستە و گەشەی مێشک.",
+        pregnancyNote: "زۆر گرنگە ڕێگری لە کەموکوڕییەکانی بۆڕی دەماری بکەیت بە زیادکردنی خواردن.",
+        sunSafetyTip: "ڕووناکی سروشتی پاڵپشتی تەندروستی گشتی و توانای زانینی دەکات.",
+        workoutSynergy: "وەرزشی نەرم یارمەتیدەرە بۆ پاراستنی سووڕی خوێن و بەکارهێنانی کاریگەری فۆلات.",
+        funFact: "ئایا دەزانیت؟ فۆلات هۆکاری ئەوەیە کە سەوزە گەڵادارەکان ئەم ناوەیان هەیە.'خواردنی نایاب' بۆ دووگیانی"
+      },
+      vitaminB12: {
+        name: "ڤیتامین B12 (کۆبالامین) – for red blood cells and nerve health",
+        foods: ["Eggs 🥚", "Milk 🥛", "Fish 🐟", "Cheese 🧀", "Chicken 🍗", "Shellfish"],
+        plants: ["N/A (naturally in animal sources only)"],
+        workouts: ["Strength training to boost energy", "Core workouts", "Stamina exercises"],
+        sunlight: "Sunlight supports mental wellness and daily rhythm",
+        benefits: "Essential for red blood cell production, nerve health, and cognitive performance",
+        deficiency: ["Fatigue", "Numbness or tingling", "Poor memory", "Mood changes"],
+        richSources: ["Shellfish", "Liver", "Eggs"],
+        foodTiming: "Take with meals for better absorption",
+        prepTips: "Avoid overcooking animal products to preserve B12",
+        tipsForVegetarians: "Vegans should seek fortified foods or consult about supplementation.",
+        kidsNote: "Crucial for developing nervous system; ensure adequate intake through diet or fortified foods.",
+        pregnancyNote: "Supports fetal nervous system development; vegetarians should monitor levels carefully.",
+        sunSafetyTip: "Sunlight enhances mood but does not produce B12 naturally.",
+        workoutSynergy: "Muscle strengthening workouts help utilize vitamin B12 efficiently.",
+        funFact: "Did you know? Some algae and fermented foods claim B12 but often lack active forms."
+      },
+      vitaminC: {
+        name: "ڤیتامین C – for immunity, skin, and wound healing",
+        foods: ["Oranges 🍊", "Kiwis 🥝", "Strawberries 🍓", "Bell Peppers 🌶️", "Broccoli 🥦", "Guava", "Papaya", "Lemons 🍋"],
+        plants: ["Citrus Trees", "Strawberry Plants", "Pepper Plants"],
+        workouts: ["Aerobic workouts to support immunity", "Outdoor cycling", "HIIT (High-Intensity Interval Training)"],
+        sunlight: "Indirect sunlight enhances immunity and reduces inflammation",
+        benefits: "Boosts immune defense, collagen production, and iron absorption",
+        deficiency: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
+        richSources: ["Bell peppers", "Oranges", "Strawberries"],
+        foodTiming: "Consume raw or lightly cooked to preserve vitamin C",
+        prepTips: "Avoid boiling; steam or eat fresh for maximum vitamin C",
+        tipsForVegetarians: "Most fruits and veggies are rich in vitamin C; fresh and raw maximize benefits.",
+        kidsNote: "Supports growing immune systems; add bright fruits and veggies to snacks.",
+        pregnancyNote: "Helps with iron absorption and tissue repair during pregnancy.",
+        sunSafetyTip: "Protect skin while getting fresh air and indirect sun exposure.",
+        workoutSynergy: "Aerobic exercise improves immune function enhanced by vitamin C.",
+        funFact: "Did you know? Bell peppers have more vitamin C than oranges per serving!"
+      },
+      vitaminD: {
+        name: "ڤیتامین D – for bones and calcium absorption",
+        foods: ["Salmon 🐠", "Egg Yolks 🥚", "Liver", "Mushrooms exposed to sun 🍄", "Sardines 🐟"],
+        plants: ["Sunlight-grown Mushrooms"],
+        workouts: ["Outdoor jogging", "Morning stretching"],
+        sunlight: "Midday sun exposure (10–20 mins) is best for vitamin D synthesis",
+        benefits: "Supports bone health, calcium absorption, immune strength, and mood balance",
+        deficiency: ["Bone pain", "Weak muscles", "Low energy", "Frequent illness"],
+        richSources: ["Fatty fish", "Egg yolks", "Sun-exposed mushrooms"],
+        foodTiming: "Take with fatty meals for better absorption",
+        prepTips: "Minimal cooking of mushrooms preserves vitamin D content",
+        tipsForVegetarians: "Include sun-exposed mushrooms and fortified plant milks to boost vitamin D naturally.",
+        kidsNote: "Crucial for growing bones; encourage outdoor play for natural vitamin D.",
+        pregnancyNote: "Supports bone development and immune health of both mother and baby.",
+        sunSafetyTip: "Balance between vitamin D synthesis and skin protection; avoid sunburn.",
+        workoutSynergy: "Outdoor exercises enhance natural vitamin D production and mood.",
+        funFact: "Did you know? Mushrooms exposed to UV light can produce vitamin D like humans!"
+      },
+      vitaminE: {
+        name: "ڤیتامین E – antioxidant, protects cells",
+        foods: ["Almonds 🌰", "Sunflower Seeds 🌻", "Spinach 🥬", "Avocado 🥑", "Hazelnuts", "Olive Oil"],
+        plants: ["Sunflower", "Avocado Tree", "Olive Tree"],
+        workouts: ["Light cardio", "Stretch routines", "Gentle dance"],
+        sunlight: "Moderate sunlight helps protect skin cells and reduce oxidative stress",
+        benefits: "Acts as a powerful antioxidant, supports skin, hair, and cellular protection",
+        deficiency: ["Muscle weakness", "Vision problems", "Immune issues"],
+        richSources: ["Nuts", "Seeds", "Leafy greens"],
+        foodTiming: "Consume with fats for better absorption",
+        prepTips: "Raw nuts and seeds retain highest vitamin E levels",
+        tipsForVegetarians: "Nuts, seeds, and green leafy vegetables provide excellent vitamin E sources.",
+        kidsNote: "Supports healthy skin and immune function.",
+        pregnancyNote: "Important antioxidant support during pregnancy.",
+        sunSafetyTip: "Moderate sun exposure protects skin cells; avoid excessive UV.",
+        workoutSynergy: "Light cardio complements vitamin E’s antioxidant role.",
+        funFact: "Did you know? Vitamin E helps protect your cells from damage caused by free radicals!"
+      },
+      // For vitaminK workouts, replaced "Tai Chi" with "Balance training"
+      vitaminK: {
+        name: "ڤیتامین K – بۆ مەیینی خوێن و تەندروستی ئێسک",
+        foods: ["Kale 🥬", "Broccoli 🥦", "Spinach 🌿", "Brussels Sprouts 🥦", "Green Beans", "Cabbage"],
+        plants: ["Leafy Greens", "Broccoli Plant", "Cabbage Plant"],
+        workouts: ["Flexibility workouts", "Balance training"], // removed Tai Chi
+        sunlight: "Supports bone health and calcium use indirectly",
+        benefits: "Essential for blood clotting, bone strength, heart health, and cell regulation",
+        deficiency: ["Excessive bleeding", "Easy bruising", "Weak bones"],
+        richSources: ["Leafy greens", "Broccoli", "Brussels sprouts"],
+        foodTiming: "Eat regularly to maintain adequate levels",
+        prepTips: "Light cooking preserves vitamin K",
+        tipsForVegetarians: "Leafy greens are the best source and easy to include in any diet.",
+        kidsNote: "Helps with blood clotting and bone development.",
+        pregnancyNote: "Important for maternal blood health and bone strength.",
+        sunSafetyTip: "Sunlight supports overall health; balance exposure safely.",
+        workoutSynergy: "Balance and flexibility workouts support bone strength aided by vitamin K.",
+        funFact: "Did you know? Vitamin K is named after 'Koagulation', the German word for clotting!"
+      }
+    };
+
+
+
+
+    const vitaminSelect = document.getElementById("vitaminSelect");
+    const suggestionsDiv = document.getElementById("suggestions");
+
+    vitaminSelect.addEventListener("change", () => {
+      const val = vitaminSelect.value;
+      if (!val) {
+        suggestionsDiv.innerHTML = "";
+        return;
+      }
+      const vitamin = vitaminData[val];
+      suggestionsDiv.innerHTML = `
+  <h2>شێوازە سروشتییەکان بۆ بەهێزکردن ${vitamin.name} ئاستەکان</h2>
+  <p><strong>خۆراک:</strong></p>
+  <ul>${vitamin.foods.map(f => `<li>${f}</li>`).join('')}</ul>
+  <p><strong>ڕووەکەکان بۆ گەشەکردن:</strong></p>
+  <ul>${vitamin.plants.map(p => `<li>${p}</li>`).join('')}</ul>
+  <p><strong>ڕاهێنانی پێشنیازکراو:</strong></p>
+  <ul>${vitamin.workouts.map(w => `<li>${w}</li>`).join('')}</ul>
+  <p><strong>بەرکەوتنی تیشکی خۆر:</strong> ${vitamin.sunlight}</p>
+  <p><strong>سوودەکان:</strong> ${vitamin.benefits || 'N/A'}</p>
+  <p><strong>نیشانەکانی کەمی:</strong> ${vitamin.deficiency ? vitamin.deficiency.join(', ') : 'N/A'}</p>
+  <p><strong>سەرچاوەی زۆر:</strong> ${vitamin.richSources ? vitamin.richSources.join(', ') : 'N/A'}</p>
+  <p><strong>کاتی خواردن:</strong> ${vitamin.foodTiming || 'N/A'}</p>
+  <p><strong>ڕێنماییەکانی ئامادەکاری:</strong> ${vitamin.prepTips || 'N/A'}</p>
+  <p><strong>ئامۆژگاری بۆ ڕووەکخۆران:</strong> ${vitamin.tipsForVegetarians || 'N/A'}</p>
+  <p><strong>تێبینی منداڵان:</strong> ${vitamin.kidsNote || 'N/A'}</p>
+  <p><strong>تێبینی دووگیانی:</strong> ${vitamin.pregnancyNote || 'N/A'}</p>
+  <p><strong>ئامۆژگاری سەلامەتی خۆر:</strong> ${vitamin.sunSafetyTip || 'N/A'}</p>
+  <p><strong>هاوکاری ڕاهێنان:</strong> ${vitamin.workoutSynergy || 'N/A'}</p>
+  <p><strong>ڕاستییەکی خۆش:</strong> ${vitamin.funFact || 'N/A'}</p>
+`;
+
+
+
+      // Placeholder for animated icons in the future
+      // animateVitaminIcons(val);
+    });
+  </script>
+</body>
+
+</html>
