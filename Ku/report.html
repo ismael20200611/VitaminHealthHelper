@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Select Vitamin Deficiency - Vitamin Health Helper</title>
+  <title>Printable Vitamin Report - Vitamin Health Helper</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     label {
@@ -12,18 +12,30 @@
       font-size: 1rem;
       padding: 8px 0;
       cursor: pointer;
+
     }
 
     select,
     button {
       max-width: 100%;
     }
+
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px 0px 8px 0px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
   </style>
 
 </head>
 
 <body>
-  <!-- Header with Logo -->
+    <!-- Header with Logo -->
   <header>
     <nav>
       <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
@@ -43,7 +55,7 @@
         <li class="dropdown">
           <a href="#" class="dropbtn">Language ▼</a>
           <div class="dropdown-content">
-            <a href="../Ku/ku_index.html">Kurdish</a>
+            <a href="../index.html">English</a>
             <!-- <a href="ar/ar_index.html">Arabic</a>
             <a href="fr/fr_index.html">French</a>
             <a href="sp/sp_index.html">Spanish</a>
@@ -58,38 +70,44 @@
   </header>
   <!-- Main content -->
   <div class="container">
-    <h1>Select Your Vitamin Deficiency</h1>
-    <p>Choose a vitamin below to get natural food, plant, workout, and sunlight suggestions.</p>
+    <h1>Your Vitamin Deficiency Report</h1>
+    <p>Generate and print your personalized vitamin deficiency report.</p>
+    <main>
+      <form id="reportForm" aria-label="Generate Vitamin Report">
+        <input type="text" id="userName" placeholder="Enter your name" required />
+        <label for="vitaminReportSelect">Select Vitamin Deficiency:</label>
+        <select id="vitaminReportSelect" required>
+          <option value="">-- Select Vitamin --</option>
+          <option value="vitaminA">Vitamin A</option>
+          <option value="vitaminB1">Vitamin B1 (Thiamine)</option>
+          <option value="vitaminB2">Vitamin B2 (Riboflavin)</option>
+          <option value="vitaminB3">Vitamin B3 (Niacin)</option>
+          <option value="vitaminB5">Vitamin B5 (Pantothenic Acid)</option>
+          <option value="vitaminB6">Vitamin B6 (Pyridoxine)</option>
+          <option value="vitaminB7">Vitamin B7 (Biotin)</option>
+          <option value="vitaminB9">Vitamin B9 (Folate)</option>
+          <option value="vitaminB12">Vitamin B12 (Cobalamin)</option>
+          <option value="vitaminC">Vitamin C</option>
+          <option value="vitaminD">Vitamin D</option>
+          <option value="vitaminE">Vitamin E</option>
+          <option value="vitaminK">Vitamin K</option>
+        </select>
 
-    <select id="vitaminSelect" aria-label="Select Vitamin">
-      <option value="">-- Select Vitamin --</option>
-      <option value="vitaminA">Vitamin A</option>
-      <option value="vitaminB1">Vitamin B1 (Thiamine)</option>
-      <option value="vitaminB2">Vitamin B2 (Riboflavin)</option>
-      <option value="vitaminB3">Vitamin B3 (Niacin)</option>
-      <option value="vitaminB5">Vitamin B5 (Pantothenic Acid)</option>
-      <option value="vitaminB6">Vitamin B6 (Pyridoxine)</option>
-      <option value="vitaminB7">Vitamin B7 (Biotin)</option>
-      <option value="vitaminB9">Vitamin B9 (Folate)</option>
-      <option value="vitaminB12">Vitamin B12 (Cobalamin)</option>
-      <option value="vitaminC">Vitamin C</option>
-      <option value="vitaminD">Vitamin D</option>
-      <option value="vitaminE">Vitamin E</option>
-      <option value="vitaminK">Vitamin K</option>
-    </select>
+        <button type="submit" class="btn">Generate Report</button>
+      </form>
 
-    <section id="suggestions" aria-live="polite" class="suggestions-container">
-      <!-- Suggestions will appear here dynamically -->
-    </section>
+      <section id="reportOutput" class="suggestions-container" aria-live="polite" style="display:none;">
+        <!-- Report content will appear here -->
+      </section>
 
-
-    <div class="buttonbtn">
-      <a href="../index.html" class="btn">Back Home</a>
-      <a href="quiz.html" class="btn">Go to Symptom Quiz</a>
-    </div>
+      <br>
+      <div class="buttonbtn">
+        <a href="../index.html" class="btn">Back Home</a>
+        <a href="vitamins.html" class="btn">Select Vitamin</a>
+        <a href="quiz.html" class="btn">Take Symptom Quiz</a>
+      </div>
 
   </div>
-
 
   <!-- Footer -->
   <footer>
@@ -99,13 +117,9 @@
     Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
     </p>
   </footer>
-
   <script src="../js/script.js"></script>
-
-
-
-  <script>const vitaminData = {
-  vitaminA: {
+  <script >const vitaminData = {
+   vitaminA: {
     name: "Vitamin A  – for vision, skin, and immune health",
     foods: ["Carrots 🥕", "Sweet Potatoes 🍠", "Spinach 🌿", "Kale 🥬", "Mango 🥭", "Pumpkin 🎃", "Red Bell Peppers 🌶️", "Apricots"],
     plants: ["Carrot Plant", "Spinach Leaves", "Kale", "Pumpkin Vine"],
@@ -343,20 +357,24 @@
   }
 };
 
+const reportForm = document.getElementById("reportForm");
+const reportOutput = document.getElementById("reportOutput");
 
+reportForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
+  const userName = document.getElementById("userName").value.trim();
+  const vitaminKey = document.getElementById("vitaminReportSelect").value;
 
-const vitaminSelect = document.getElementById("vitaminSelect");
-const suggestionsDiv = document.getElementById("suggestions");
-
-vitaminSelect.addEventListener("change", () => {
-  const val = vitaminSelect.value;
-  if (!val) {
-    suggestionsDiv.innerHTML = "";
+  if (!userName || !vitaminKey) {
+    alert("Please enter your name and select a vitamin.");
     return;
   }
-  const vitamin = vitaminData[val];
-suggestionsDiv.innerHTML = `
+
+  const vitamin = vitaminData[vitaminKey];
+
+  reportOutput.style.display = "block";
+  reportOutput.innerHTML = `
   <h2>Natural Ways to Improve ${vitamin.name} Levels</h2>
   <p><strong>Foods:</strong></p>
   <ul>${vitamin.foods.map(f => `<li>${f}</li>`).join('')}</ul>
@@ -378,12 +396,13 @@ suggestionsDiv.innerHTML = `
   <p><strong>Fun Fact:</strong> ${vitamin.funFact || 'N/A'}</p>
 `;
 
-
-
-  // Placeholder for animated icons in the future
-  // animateVitaminIcons(val);
+  // Trigger browser print dialog for user convenience
+  setTimeout(() => {
+    window.print();
+  }, 300);
 });
 </script>
+
 </body>
 
 </html>

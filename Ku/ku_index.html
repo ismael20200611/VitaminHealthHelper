@@ -1,34 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vitamin Health Project - Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <script src="js/script.js"></script>
+  <title>سەرەتا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
   <style>
-    /* Responsive */
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
-      }
 
-      .buttonbtn a {
-        display: inline-block;
-        margin: 0.5rem 0;
-      }
-    }
   </style>
-
 </head>
 
 <body>
   <!-- Header with Logo -->
   <header>
     <nav>
-      <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+      <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
       <!-- Hamburger toggle for mobile -->
       <div class="menu-toggle" onclick="toggleMenu()">
@@ -38,35 +28,37 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="tools/product.html">Product</a></li>
-        <li><a href="tools/about.html">About</a></li>
-        <li><a href="tools/contact.html">Contact</a></li>
+        <li><a href="ku_index.html" class="active">سەرەتا</a></li>
+        <li><a href="ku_product.html">بەرهەمهێنان</a></li>
+        <li><a href="ku_about.html">دەربارەی</a></li>
+        <li><a href="ku_contact.html">پەیوەندی</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
-          <div class="dropdown-content"> 
-            <a href="Ku/ku_index.html">Kurdish</a>
-            <!-- <a href="ar/ar_index.html">Arabic</a>
-            <a href="fr/fr_index.html">French</a>
-            <a href="sp/sp_index.html">Spanish</a>
-            <a href="po/po_index.html">Polish</a>
-            <a href="it/it_index.html">Italian</a>
-            <a href="ch/ch_index.html">Chinese</a>
-            <a href="ge/ge_index.html">German</a> -->
+          <a href="#" class="dropbtn">زمان ▼</a>
+          <div class="dropdown-content">
+            <a href="../index.html">ئینگلیزی</a>
+            <!-- <a href="../ar/ar_index.html">عەرەبی</a>
+            <a href="../fr/fr_index.html">فەرەنسی</a>
+            <a href="../sp/sp_index.html">ئیسپانی</a>
+            <a href="../po/po_index.html">پۆڵەندی</a>
+            <a href="../it/it_index.html">ئیتاڵی</a>
+            <a href="../ch/ch_index.html">چینی</a>
+            <a href="../ge/ge_index.html">ئەڵمانی</a> -->
           </div>
         </li>
       </ul>
+
     </nav>
   </header>
+
   <!-- Main content -->
   <div class="container">
-    <h1>🌿 Vitamin Health Helper</h1>
-    <p>Your guide to natural vitamin balance with foods, sun, workouts & plants!</p>
+    <h1>🌿 یارمەتیدەری تەندروستی ڤیتامین</h1>
+    <p>ڕێبەرەکەت بۆ بەدەستهێنانی هاوسەنگییەکی سروشتی ڤیتامینەکان لە ڕێگەی خۆراک، خۆر، وەرزش و ڕووەکەکان!</p>
     <div class="buttonbtn">
-      <a href="./tools/vitamins.html" class="btn">Select Vitamin Deficiency</a>
-      <a href="./tools/quiz.html" class="btn">Symptom-Based Quiz</a>
-      <a href="./tools/risk-calculator.html" class="btn">Vitamin Deficiency Risk Calculator</a>
-      <a href="./tools/report.html" class="btn">Printable Report</a>
+      <a href="vitamins.html" class="btn">دیاریکردنی کەمی ڤیتامین</a>
+      <a href="tools/quiz.html" class="btn">تاقیکردنەوەی لەسەر بنەمای نیشانەکان</a>
+      <a href="tools/risk-calculator.html" class="btn">ژمێرەری مەترسی کەمی ڤیتامین</a>
+      <a href="tools/report.html" class="btn">ڕاپۆرتی شیاوی چاپکردن</a>
     </div>
 
   </div>
@@ -115,12 +107,16 @@
   </div>
   <!-- Footer -->
   <footer>
-    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
-    <p>Last updated: June 2025</p>
-    &copy; <a class="border-bottom" href="index.html">Vitamin Health Helper</a>, All Right Reserved.
-    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    <p>دروستکراوە لەلایەن <a href="https://ismael-software.vercel.app/" target="_blank">نوێژیان</a></p>
+    <p>دوایین نوێکردنەوە: تەممووزی 2025</p>
+    &copy; <a class="border-bottom" href="">یارمەتیدەری تەندروستی ڤیتامین</a>، هەموو مافەکان پارێزراون. دیزاین کراوە
+    لەلایەن<a class="border-bottom" href="https://ismael-software.vercel.app/">نوێژیان</a>
     </p>
   </footer>
+
+
+
+
 
 </body>
 
