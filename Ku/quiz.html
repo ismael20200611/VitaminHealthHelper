@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Symptom-Based Quiz - Vitamin Health Helper</title>
+  <title>تاقیکردنەوەی لەسەر بنەمای نیشانەکان</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     label {
@@ -23,6 +23,7 @@
   </style>
 
 </head>
+
 <body>
   <!-- Header with Logo -->
   <header>
@@ -37,21 +38,21 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="ku_index.html" class="active">Home</a></li>
-        <li><a href="ku_product.html">Product</a></li>
-        <li><a href="ku_about.html">About</a></li>
-        <li><a href="ku_contact.html">Contact</a></li>
+        <li><a href="ku_index.html" class="active">سەرەتا</a></li>
+        <li><a href="ku_product.html">بەرهەمهێنان</a></li>
+        <li><a href="ku_about.html">دەربارەی</a></li>
+        <li><a href="ku_contact.html">پەیوەندی</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">زمان ▼</a>
           <div class="dropdown-content">
-            <a href="../index.html">English</a>
-            <!-- <a href="ar/ar_index.html">Arabic</a>
-            <a href="fr/fr_index.html">French</a>
-            <a href="sp/sp_index.html">Spanish</a>
-            <a href="po/po_index.html">Polish</a>
-            <a href="it/it_index.html">Italian</a>
-            <a href="ch/ch_index.html">Chinese</a>
-            <a href="ge/ge_index.html">German</a> -->
+            <a href="../index.html">ئینگلیزی</a>
+            <!-- <a href="../ar/ar_index.html">عەرەبی</a>
+            <a href="../fr/fr_index.html">فەرەنسی</a>
+            <a href="../sp/sp_index.html">ئیسپانی</a>
+            <a href="../po/po_index.html">پۆڵەندی</a>
+            <a href="../it/it_index.html">ئیتاڵی</a>
+            <a href="../ch/ch_index.html">چینی</a>
+            <a href="../ge/ge_index.html">ئەڵمانی</a> -->
           </div>
         </li>
       </ul>
@@ -60,35 +61,35 @@
   <!-- Main content -->
   <div class="container">
 
-    <h1>Symptom-Based Vitamin Deficiency Quiz</h1>
-    <p>Select your symptoms and find out possible vitamin deficiencies.</p>
+    <h1>تاقیکردنەوەی کەمی ڤیتامین لەسەر بنەمای نیشانەکان</h1>
+    <p>نیشانەکانی خۆت دیاری بکە و ئەگەری کەمی ڤیتامین بدۆزەوە.</p>
 
     <form id="symptomForm" aria-label="Vitamin deficiency symptom quiz">
       <fieldset>
-        <legend>Choose symptoms you experience:</legend>
+        <legend>ئەو نیشانانە دیاری بکە کە توشی دەبیت:</legend>
 
-        <label><input type="checkbox" name="symptom" value="tiredness" /> Tiredness/Fatigue</label>
-        <label><input type="checkbox" name="symptom" value="drySkin" /> Dry Skin</label>
-        <label><input type="checkbox" name="symptom" value="bleedingGums" /> Bleeding Gums</label>
-        <label><input type="checkbox" name="symptom" value="musclePain" /> Muscle Pain/Weakness</label>
-        <label><input type="checkbox" name="symptom" value="poorVision" /> Poor Night Vision</label>
-        <label><input type="checkbox" name="symptom" value="slowHealing" /> Slow Healing Wounds</label>
-        <label><input type="checkbox" name="symptom" value="bonePain" /> Bone Pain/Fragility</label>
-        <label><input type="checkbox" name="symptom" value="hairLoss" /> Hair Loss</label>
-        <label><input type="checkbox" name="symptom" value="memoryLoss" /> Memory Problems</label>
-        <label><input type="checkbox" name="symptom" value="numbness" /> Numbness/Tingling</label>
-        <label><input type="checkbox" name="symptom" value="easyBruising" /> Easy Bruising</label>
-        <label><input type="checkbox" name="symptom" value="depression" /> Depression/Mood Swings</label>
-        <label><input type="checkbox" name="symptom" value="poorAppetite" /> Poor Appetite</label>
+        <label><input type="checkbox" name="symptom" value="tiredness" /> ماندووبوون/ماندوێتی</label>
+        <label><input type="checkbox" name="symptom" value="drySkin" /> پێستی وشک</label>
+        <label><input type="checkbox" name="symptom" value="bleedingGums" /> خوێن بەربوونی پووک</label>
+        <label><input type="checkbox" name="symptom" value="musclePain" /> ئازار/لاوازی ماسولکەکان</label>
+        <label><input type="checkbox" name="symptom" value="poorVision" /> لاوازی بینینی شەو/بینینی خراپی شەوانە</label>
+        <label><input type="checkbox" name="symptom" value="slowHealing" /> هێواش چاکبوونەوەی برینەکان</label>
+        <label><input type="checkbox" name="symptom" value="bonePain" /> ئازاری ئێسک/ناسکی ئێسک</label>
+        <label><input type="checkbox" name="symptom" value="hairLoss" /> هەڵوەرینی قژ</label>
+        <label><input type="checkbox" name="symptom" value="memoryLoss" /> کێشەکانی بیرەوەری/لەبیرکردنی شتەکان</label>
+        <label><input type="checkbox" name="symptom" value="numbness" /> سڕبوون/گزگز کردن/بێهێزی/تەزووکردن</label>
+        <label><input type="checkbox" name="symptom" value="easyBruising" /> کوترانێکی ئاسان/شین ومۆربوونی پێست</label>
+        <label><input type="checkbox" name="symptom" value="depression" /> هەستکردن بە دڵتەنگی/خەمۆکی/گۆڕینی باری دەروونی</label>
+        <label><input type="checkbox" name="symptom" value="poorAppetite" /> ئارەزووی لاواز/خراپی ئارەزووی خواردن</label>
       </fieldset>
       <br>
-      <button type="submit" class="btn">Check Deficiency</button>
+      <button type="submit" class="btn">پشکنین بۆ کەموکورتییەکان</button>
     </form>
 
     <section id="quizResults" aria-live="polite" class="suggestions-container"></section>
 
-    <div class="buttonbtn"><a href="../index.html" class="btn">Back Home</a>
-      <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+    <div class="buttonbtn"><a href="../index.html" class="btn">گەڕانەوە بۆ سەرەتا</a>
+      <a href="vitamins.html" class="btn">ڤیتامین بەدەست هەڵبژێرە</a>
     </div>
 
   </div>
@@ -104,63 +105,63 @@
 
   <script src="../js/script.js"></script>
   <script>const symptomToVitaminMap = {
-  tiredness: ["vitaminB12", "vitaminD", "vitaminE"],
-  drySkin: ["vitaminA", "vitaminE"],
-  bleedingGums: ["vitaminC", "vitaminK"],
-  musclePain: ["vitaminD", "vitaminB12"],
-  poorVision: ["vitaminA"],
-  slowHealing: ["vitaminC", "vitaminA"],
-  bonePain: ["vitaminD", "vitaminK"],
-  hairLoss: ["vitaminB12", "vitaminA", "vitaminE"],
-  memoryLoss: ["vitaminB12", "vitaminD"],
-  numbness: ["vitaminB12"],
-  easyBruising: ["vitaminC", "vitaminK"],
-  depression: ["vitaminD", "vitaminB12"],
-  poorAppetite: ["vitaminB12", "vitaminA"],
-};
+      tiredness: ["vitaminB12", "vitaminD", "vitaminE"],
+      drySkin: ["vitaminA", "vitaminE"],
+      bleedingGums: ["vitaminC", "vitaminK"],
+      musclePain: ["vitaminD", "vitaminB12"],
+      poorVision: ["vitaminA"],
+      slowHealing: ["vitaminC", "vitaminA"],
+      bonePain: ["vitaminD", "vitaminK"],
+      hairLoss: ["vitaminB12", "vitaminA", "vitaminE"],
+      memoryLoss: ["vitaminB12", "vitaminD"],
+      numbness: ["vitaminB12"],
+      easyBruising: ["vitaminC", "vitaminK"],
+      depression: ["vitaminD", "vitaminB12"],
+      poorAppetite: ["vitaminB12", "vitaminA"],
+    };
 
-const vitaminNames = {
-  vitaminA: "Vitamin A",
-  vitaminB12: "Vitamin B12",
-  vitaminC: "Vitamin C",
-  vitaminD: "Vitamin D",
-  vitaminE: "Vitamin E",
-  vitaminK: "Vitamin K",
-};
+    const vitaminNames = {
+      vitaminA: "ڤیتامین A",
+      vitaminB12: "ڤیتامین B12",
+      vitaminC: "ڤیتامین C",
+      vitaminD: "ڤیتامین D",
+      vitaminE: "ڤیتامین E",
+      vitaminK: "ڤیتامین K",
+    };
 
-const symptomForm = document.getElementById("symptomForm");
-const quizResults = document.getElementById("quizResults");
+    const symptomForm = document.getElementById("symptomForm");
+    const quizResults = document.getElementById("quizResults");
 
-symptomForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const checkedSymptoms = Array.from(document.querySelectorAll('input[name="symptom"]:checked')).map(cb => cb.value);
+    symptomForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const checkedSymptoms = Array.from(document.querySelectorAll('input[name="symptom"]:checked')).map(cb => cb.value);
 
-  if (checkedSymptoms.length === 0) {
-    quizResults.innerHTML = `<p>Please select at least one symptom to check.</p>`;
-    return;
-  }
+      if (checkedSymptoms.length === 0) {
+        quizResults.innerHTML = `<p>تکایە بەلایەنی کەمەوە یەک نیشانە هەڵبژێرە بۆ پشکنین.</p>`;
+        return;
+      }
 
-  // Count vitamin mentions based on symptoms
-  const vitaminCount = {};
-  checkedSymptoms.forEach(symptom => {
-    (symptomToVitaminMap[symptom] || []).forEach(vit => {
-      vitaminCount[vit] = (vitaminCount[vit] || 0) + 1;
+      // Count vitamin mentions based on symptoms
+      const vitaminCount = {};
+      checkedSymptoms.forEach(symptom => {
+        (symptomToVitaminMap[symptom] || []).forEach(vit => {
+          vitaminCount[vit] = (vitaminCount[vit] || 0) + 1;
+        });
+      });
+
+      // Sort vitamins by count desc
+      const sortedVitamins = Object.entries(vitaminCount).sort((a, b) => b[1] - a[1]);
+
+      if (sortedVitamins.length === 0) {
+        quizResults.innerHTML = `<p>هیچ کەموکورتییەکی ڤیتامین لە نیشانەکانی دیاریکراودا بەدی نەکراوە.</p>`;
+        return;
+      }
+
+      quizResults.innerHTML = `<h2>لیستی پێشنیارکراوی کەمی ڤیتامین</h2><ul>` +
+        sortedVitamins.map(([vit, count]) => `<li><strong>${vitaminNames[vit]}</strong> — پەیوەندیدار بە ${count} نیشانەکان</li>`).join('') +
+        `</ul>`;
     });
-  });
-
-  // Sort vitamins by count desc
-  const sortedVitamins = Object.entries(vitaminCount).sort((a, b) => b[1] - a[1]);
-
-  if (sortedVitamins.length === 0) {
-    quizResults.innerHTML = `<p>No vitamin deficiencies detected from selected symptoms.</p>`;
-    return;
-  }
-
-  quizResults.innerHTML = `<h2>Possible Vitamin Deficiency Matches</h2><ul>` +
-    sortedVitamins.map(([vit, count]) => `<li><strong>${vitaminNames[vit]}</strong> — related to ${count} symptom(s)</li>`).join('') +
-    `</ul>`;
-});
-</script>
+  </script>
 
 </body>
 
