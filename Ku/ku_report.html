@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دیاریکردنی کەمی ڤیتامین</title>
+  <title>ڕاپۆرتی ڤیتامین کە دەتوانرێت چاپ بکرێت</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     label {
@@ -12,11 +12,23 @@
       font-size: 1rem;
       padding: 8px 0;
       cursor: pointer;
+
     }
 
     select,
     button {
       max-width: 100%;
+    }
+
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px 0px 8px 0px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
   </style>
 
@@ -58,39 +70,45 @@
   </header>
   <!-- Main content -->
   <div class="container">
-    <h1>کەمیی ڤیتامین دیاری بکە</h1>
-    <p>ڤیتامینێک لە لیستەکەی خوارەوە هەڵبژێرە بۆ وەرگرتنی پێشنیار بۆ خواردنی سروشتی و ڕووەکەکان و وەرزش و بەرکەوتنی
-      تیشکی خۆر.</p>
+    <h1>ڕاپۆرتی کەمی ڤیتامین</h1>
+    <p>ڕاپۆرتی کەمی ڤیتامین تایبەتی خۆت دروست بکە و چاپ بکە.</p>
+    <main>
+      <form id="reportForm" aria-label="Generate Vitamin Report">
+        <input type="text" id="userName" placeholder="ناوی خۆت بنووسە:" required />
+        <label for="vitaminReportSelect">دیاریکردنی کەمی ڤیتامین:</label>
+        <select id="vitaminReportSelect" required>
+          <option value="">-- ڤیتامین هەڵبژێرە --</option>
+          <option value="vitaminA">ڤیتامین A</option>
+          <option value="vitaminB1">ڤیتامین B1 (تیامین)</option>
+          <option value="vitaminB2">ڤیتامین B2 (ڕیبۆفلاڤین)</option>
+          <option value="vitaminB3">ڤیتامین B3 (نیاسین)</option>
+          <option value="vitaminB5">ڤیتامین B5 (ترشی پانتۆثنیک)</option>
+          <option value="vitaminB6">ڤیتامین B6 (پیریدۆکسین)</option>
+          <option value="vitaminB7">ڤیتامین B7 (بیۆتین)</option>
+          <option value="vitaminB9">ڤیتامین B9 (فۆلات)</option>
+          <option value="vitaminB12">ڤیتامین B12 (کۆبالامین)</option>
+          <option value="vitaminC">ڤیتامین C</option>
+          <option value="vitaminD">ڤیتامین D</option>
+          <option value="vitaminE">ڤیتامین E</option>
+          <option value="vitaminK">ڤیتامین K</option>
+        </select>
 
-    <select id="vitaminSelect" aria-label="Select Vitamin">
-      <option value="">-- ڤیتامین هەڵبژێرە --</option>
-      <option value="vitaminA">ڤیتامین A</option>
-      <option value="vitaminB1">ڤیتامین B1 (تیامین)</option>
-      <option value="vitaminB2">ڤیتامین B2 (ڕیبۆفلاڤین)</option>
-      <option value="vitaminB3">ڤیتامین B3 (نیاسین)</option>
-      <option value="vitaminB5">ڤیتامین B5 (ترشی پانتۆثنیک)</option>
-      <option value="vitaminB6">ڤیتامین B6 (پیریدۆکسین)</option>
-      <option value="vitaminB7">ڤیتامین B7 (بیۆتین)</option>
-      <option value="vitaminB9">ڤیتامین B9 (فۆلات)</option>
-      <option value="vitaminB12">ڤیتامین B12 (کۆبالامین)</option>
-      <option value="vitaminC">ڤیتامین C</option>
-      <option value="vitaminD">ڤیتامین D</option>
-      <option value="vitaminE">ڤیتامین E</option>
-      <option value="vitaminK">ڤیتامین K</option>
-    </select>
+        <button type="submit" class="btn">دروستکردنی ڕاپۆرت</button>
+      </form>
 
-    <section id="suggestions" aria-live="polite" class="suggestions-container" style=" text-align: right;">
-      <!-- Suggestions will appear here dynamically -->
-    </section>
+      <section id="reportOutput" class="suggestions-container" aria-live="polite"
+        style="display:none; text-align: right;">
+        <!-- Report content will appear here -->
+      </section>
 
-
-    <div class="buttonbtn">
-      <a href="ku_index.html" class="btn">گەڕانەوە بۆ سەرەتا</a>
-      <a href="ku_quiz.html" class="btn">بڕۆ بۆ تاقیکردنەوەی نیشانەکان</a>
-    </div>
+      <br>
+      <div class="buttonbtn">
+        <a href="ku_index.html" class="btn">گەڕانەوە بۆ سەرەتا</a>
+        <a href="ku_vitamins.html" class="btn">ڤیتامین هەڵبژێرە</a>
+        <a href="ku_quiz.html" class="btn">تاقیکردنەوەی نیشانەکان وەربگرە</a>
+      </div>
 
   </div>
-
 
   <!-- Footer -->
   <footer>
@@ -100,11 +118,7 @@
     لەلایەن<a class="border-bottom" href="https://ismael-software.vercel.app/">نوێژیان</a>
     </p>
   </footer>
-
   <script src="../js/script.js"></script>
-
-
-
   <script>const vitaminData = {
       vitaminA: {
         name: "ڤیتامین A  – بۆ تەندروستی بینین و پێست و سیستەمی بەرگری",
@@ -343,22 +357,25 @@
         funFact: "ئایا دەزانیت؟ ڤیتامین K بە ناوی 'خوێن لێدان' ناونراوە، کە وشەی ئەڵمانی بۆ خوێن مەین یە!"
       }
     };
+    const reportForm = document.getElementById("reportForm");
+    const reportOutput = document.getElementById("reportOutput");
 
+    reportForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
+      const userName = document.getElementById("userName").value.trim();
+      const vitaminKey = document.getElementById("vitaminReportSelect").value;
 
-
-    const vitaminSelect = document.getElementById("vitaminSelect");
-    const suggestionsDiv = document.getElementById("suggestions");
-
-    vitaminSelect.addEventListener("change", () => {
-      const val = vitaminSelect.value;
-      if (!val) {
-        suggestionsDiv.innerHTML = "";
+      if (!userName || !vitaminKey) {
+        alert("تکایە ناوی خۆت بنووسە و ڤیتامینێک هەڵبژێرە.");
         return;
       }
-      const vitamin = vitaminData[val];
-      suggestionsDiv.innerHTML = `
-  <h2>شێوازە سروشتییەکان بۆ بەهێزکردن ${vitamin.name} ئاستەکان</h2>
+
+      const vitamin = vitaminData[vitaminKey];
+
+      reportOutput.style.display = "block";
+      reportOutput.innerHTML = `
+ <h2>شێوازە سروشتییەکان بۆ بەهێزکردن ${vitamin.name} ئاستەکان</h2>
   <p><strong>خۆراک:</strong></p>
   <ul>${vitamin.foods.map(f => `<li>${f}</li>`).join('')}</ul>
   <p><strong>ڕووەکەکان بۆ گەشەکردن:</strong></p>
@@ -379,12 +396,13 @@
   <p><strong>ڕاستییەکی خۆش:</strong> ${vitamin.funFact || 'N/A'}</p>
 `;
 
-
-
-      // Placeholder for animated icons in the future
-      // animateVitaminIcons(val);
+      // Trigger browser print dialog for user convenience
+      setTimeout(() => {
+        window.print();
+      }, 300);
     });
   </script>
+
 </body>
 
 </html>
