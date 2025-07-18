@@ -68,21 +68,28 @@
       <fieldset>
         <legend>ئەو نیشانانە دیاری بکە کە توشی دەبیت:</legend>
 
-        <label><input type="checkbox" name="symptom" value="tiredness" /> ماندووبوون/ماندوێتی</label>
+        <label><input type="checkbox" name="symptom" value="tiredness" />ماندووبوون/ماندوێتی</label>
         <label><input type="checkbox" name="symptom" value="drySkin" /> پێستی وشک</label>
-        <label><input type="checkbox" name="symptom" value="bleedingGums" /> خوێن بەربوونی پووک</label>
-        <label><input type="checkbox" name="symptom" value="musclePain" /> ئازار/لاوازی ماسولکەکان</label>
-        <label><input type="checkbox" name="symptom" value="poorVision" /> لاوازی بینینی شەو/بینینی خراپی شەوانە</label>
-        <label><input type="checkbox" name="symptom" value="slowHealing" /> هێواش چاکبوونەوەی برینەکان</label>
-        <label><input type="checkbox" name="symptom" value="bonePain" /> ئازاری ئێسک/ناسکی ئێسک</label>
-        <label><input type="checkbox" name="symptom" value="hairLoss" /> هەڵوەرینی قژ</label>
-        <label><input type="checkbox" name="symptom" value="memoryLoss" /> کێشەکانی بیرەوەری/لەبیرکردنی شتەکان</label>
-        <label><input type="checkbox" name="symptom" value="numbness" /> سڕبوون/گزگز کردن/بێهێزی/تەزووکردن</label>
-        <label><input type="checkbox" name="symptom" value="easyBruising" /> کوترانێکی ئاسان/شین ومۆربوونی پێست</label>
-        <label><input type="checkbox" name="symptom" value="depression" /> هەستکردن بە دڵتەنگی/خەمۆکی/گۆڕینی باری
+        <label><input type="checkbox" name="symptom" value="bleedingGums" />خوێن بەربوونی پووک</label>
+        <label><input type="checkbox" name="symptom" value="musclePain" />ئازار/لاوازی ماسولکەکان</label>
+        <label><input type="checkbox" name="symptom" value="poorVision" />لاوازی بینینی شەو/بینینی خراپی شەوانە</label>
+        <label><input type="checkbox" name="symptom" value="slowHealing" />هێواش چاکبوونەوەی برینەکان</label>
+        <label><input type="checkbox" name="symptom" value="bonePain" />ئازاری ئێسک/ناسکی ئێسک</label>
+        <label><input type="checkbox" name="symptom" value="hairLoss" />هەڵوەرینی قژ</label>
+        <label><input type="checkbox" name="symptom" value="memoryLoss" />کێشەکانی بیرەوەری/لەبیرکردنی شتەکان</label>
+        <label><input type="checkbox" name="symptom" value="numbness" />سڕبوون/گزگز کردن/بێهێزی/تەزووکردن</label>
+        <label><input type="checkbox" name="symptom" value="easyBruising" />کوترانێکی ئاسان/شین ومۆربوونی پێست</label>
+        <label><input type="checkbox" name="symptom" value="depression" />هەستکردن بە دڵتەنگی/خەمۆکی/گۆڕینی باری
           دەروونی</label>
-        <label><input type="checkbox" name="symptom" value="poorAppetite" /> ئارەزووی لاواز/خراپی ئارەزووی
-          خواردن</label>
+        <label><input type="checkbox" name="symptom" value="poorAppetite" />ئارەزووی لاواز/خراپی ئارەزووی خواردن</label>
+        <label><input type="checkbox" name="symptom" value="paleSkin" />پێستی زەردهەڵگەڕاو/پێستی کاڵ</label>
+        <label><input type="checkbox" name="symptom" value="frequentInfections" />هەوکردنە بەردەوامەکان/هەوکردنی
+          زۆر</label>
+        <label><input type="checkbox" name="symptom" value="cracksMouth" />Cracks at Mouth Corners</label>
+        <label><input type="checkbox" name="symptom" value="constipation" />قەبزی</label>
+        <label><input type="checkbox" name="symptom" value="dizziness" />سەرگێژبوون/سەرسوڕمانی/سەرسوڕان</label>
+        <label><input type="checkbox" name="symptom" value="brittleNails" />نینۆکی ناسک/نینۆکی شکاو</label>
+        <label><input type="checkbox" name="symptom" value="restlessLegs" />Restless Legs</label>
       </fieldset>
       <br>
       <button type="submit" class="btn">پشکنین بۆ کەموکورتییەکان</button>
@@ -151,6 +158,13 @@
       easyBruising: ["vitaminC", "vitaminK"],
       depression: ["vitaminD", "vitaminB12"],
       poorAppetite: ["vitaminB12", "vitaminA"],
+      paleSkin: ["vitaminB12", "iron", "Vitamin B9"],
+      frequentInfections: ["vitaminC", "vitaminD", "zinc"],
+      cracksMouth: ["vitaminB2", "vitaminB3", "vitaminB6"],
+      constipation: ["magnesium", "vitaminD"],
+      dizziness: ["vitaminB12", "iron"],
+      restlessLegs: ["iron", "magnesium"],
+      brittleNails: ["Vitamin B7", "iron"]
     };
 
     const vitaminNames = {
@@ -160,6 +174,14 @@
       vitaminD: "ڤیتامین D",
       vitaminE: "ڤیتامین E",
       vitaminK: "ڤیتامین K",
+      iron: "ئاسن",
+      zinc: "زینک",
+      folate: "ڤیتامین B9",
+      magnesium: "مەگنیسیۆم",
+      biotin: "ڤیتامین B7",
+      vitaminB2: "ڤیتامین B2",
+      vitaminB3: "ڤیتامین B3",
+      vitaminB6: "ڤیتامین B6"
     };
 
     const symptomForm = document.getElementById("symptomForm");

@@ -81,6 +81,13 @@
         <label><input type="checkbox" name="symptom" value="easyBruising" /> Easy Bruising</label>
         <label><input type="checkbox" name="symptom" value="depression" /> Depression/Mood Swings</label>
         <label><input type="checkbox" name="symptom" value="poorAppetite" /> Poor Appetite</label>
+        <label><input type="checkbox" name="symptom" value="paleSkin" /> Pale Skin</label>
+        <label><input type="checkbox" name="symptom" value="frequentInfections" /> Frequent Infections</label>
+        <label><input type="checkbox" name="symptom" value="cracksMouth" /> Cracks at Mouth Corners</label>
+        <label><input type="checkbox" name="symptom" value="constipation" /> Constipation</label>
+        <label><input type="checkbox" name="symptom" value="dizziness" /> Dizziness/Lightheadedness</label>
+        <label><input type="checkbox" name="symptom" value="restlessLegs" /> Restless Legs</label>
+        <label><input type="checkbox" name="symptom" value="brittleNails" /> Brittle Nails</label>
       </fieldset>
       <br>
       <button type="submit" class="btn">Check Deficiency</button>
@@ -149,6 +156,13 @@
       easyBruising: ["vitaminC", "vitaminK"],
       depression: ["vitaminD", "vitaminB12"],
       poorAppetite: ["vitaminB12", "vitaminA"],
+      paleSkin: ["vitaminB12", "iron", "Vitamin B9"],
+      frequentInfections: ["vitaminC", "vitaminD", "zinc"],
+      cracksMouth: ["vitaminB2", "vitaminB3", "vitaminB6"],
+      constipation: ["magnesium", "vitaminD"],
+      dizziness: ["vitaminB12", "iron"],
+      restlessLegs: ["iron", "magnesium"],
+      brittleNails: ["Vitamin B7", "iron"]
     };
 
     const vitaminNames = {
@@ -158,6 +172,14 @@
       vitaminD: "Vitamin D",
       vitaminE: "Vitamin E",
       vitaminK: "Vitamin K",
+      iron: "Iron",
+      zinc: "Zinc",
+      folate: "Vitamin B9",
+      magnesium: "Magnesium",
+      biotin: "Vitamin B7",
+      vitaminB2: "Vitamin B2",
+      vitaminB3: "Vitamin B3",
+      vitaminB6: "Vitamin B6"
     };
 
     const symptomForm = document.getElementById("symptomForm");
