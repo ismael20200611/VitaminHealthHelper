@@ -82,7 +82,7 @@
 
     // Redirect to results page after 2 seconds
     setTimeout(() => {
-      window.location.href = 'qu nwe result.html';
-    }, 20000);
+      window.location.href = '#';
+    }, 60000);
   });
 

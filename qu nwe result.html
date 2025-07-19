@@ -4,24 +4,13 @@
   <meta charset="UTF-8">
   <title>Deficiency Result</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    .result-box {
-      background-color: #f4f4f4;
-      border-left: 4px solid #4caf50;
-      padding: 16px;
-      margin-top: 20px;
-    }
-  </style>
+  
 </head>
 <body>
-  <h1>Your Vitamin Deficiency Result</h1>
-  <div id="result" class="result-box">Loading...</div>
-  <br>
+
+  <section id="quizResults" aria-live="polite" class="suggestions-container">  <div id="result" class="result-box">Loading...</div>
+ </section>
+
 <script src="js.js"></script>
   <script>
     const result = localStorage.getItem('vitaminResult');
