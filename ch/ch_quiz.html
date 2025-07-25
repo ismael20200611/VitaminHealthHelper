@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>基于症状的维生素缺乏测试 - 维生素健康助手</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    label {
+      display: block;
+      font-size: 1rem;
+      padding: 8px 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    select,
+    button {
+      max-width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 头部和导航 -->
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.png" alt="标志" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+      <!-- 移动端汉堡菜单切换 -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="ch_index.html" class="active">首页</a></li>
+        <li><a href="ch_product.html">产品</a></li>
+        <li><a href="ch_about.html">关于我们</a></li>
+        <li><a href="ch_contact.html">联系我们</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">语言 ▼</a>
+          <div class="dropdown-content">
+            <a href="../Ku/ku_quiz.html">库尔德语</a>
+            <!-- <a href="ar/ar_index.html">阿拉伯语</a>
+            <a href="fr/fr_index.html">法语</a>
+            <a href="sp/sp_index.html">西班牙语</a>
+            <a href="po/po_index.html">波兰语</a>
+            <a href="it/it_index.html">意大利语</a>
+            <a href="ch/ch_index.html">中文</a>
+            <a href="ge/ge_index.html">德语</a> -->
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主要内容 -->
+  <div class="container">
+
+    <h1>基于症状的维生素缺乏测试</h1>
+    <p>选择您出现的症状，查看可能的维生素缺乏情况。</p>
+
+    <form id="symptomForm" aria-label="维生素缺乏症状测试">
+      <fieldset aria-labelledby="symptomLegend">
+        <legend id="symptomLegend">请选择您经历的症状：</legend>
+
+        <label><input type="checkbox" name="symptom" value="tiredness" /> 疲劳/乏力</label>
+        <label><input type="checkbox" name="symptom" value="drySkin" /> 皮肤干燥</label>
+        <label><input type="checkbox" name="symptom" value="bleedingGums" /> 牙龈出血</label>
+        <label><input type="checkbox" name="symptom" value="musclePain" /> 肌肉疼痛/无力</label>
+        <label><input type="checkbox" name="symptom" value="poorVision" /> 夜间视力差</label>
+        <label><input type="checkbox" name="symptom" value="slowHealing" /> 伤口愈合缓慢</label>
+        <label><input type="checkbox" name="symptom" value="bonePain" /> 骨痛/骨脆弱</label>
+        <label><input type="checkbox" name="symptom" value="hairLoss" /> 脱发</label>
+        <label><input type="checkbox" name="symptom" value="memoryLoss" /> 记忆力减退</label>
+        <label><input type="checkbox" name="symptom" value="numbness" /> 麻木/刺痛</label>
+        <label><input type="checkbox" name="symptom" value="easyBruising" /> 易瘀伤</label>
+        <label><input type="checkbox" name="symptom" value="depression" /> 抑郁/情绪波动</label>
+        <label><input type="checkbox" name="symptom" value="poorAppetite" /> 食欲不振</label>
+        <label><input type="checkbox" name="symptom" value="paleSkin" /> 皮肤苍白</label>
+        <label><input type="checkbox" name="symptom" value="frequentInfections" /> 频繁感染</label>
+        <label><input type="checkbox" name="symptom" value="cracksMouth" /> 口角开裂</label>
+        <label><input type="checkbox" name="symptom" value="constipation" /> 便秘</label>
+        <label><input type="checkbox" name="symptom" value="dizziness" /> 头晕/头昏</label>
+        <label><input type="checkbox" name="symptom" value="restlessLegs" /> 不安腿综合征</label>
+        <label><input type="checkbox" name="symptom" value="brittleNails" /> 指甲脆弱</label>
+      </fieldset>
+      <br>
+      <button type="submit" class="btn">检查缺乏情况</button>
+    </form>
+
+    <section id="quizResults" aria-live="polite" class="suggestions-container"></section>
+
+    <div class="buttonbtn">
+      <a href="ch_index.html" class="btn">返回首页</a>
+      <a href="vitamins.html" class="btn">手动选择维生素</a>
+    </div>
+
+  </div>
+
+  <div class="socials-container">
+    <a data-social="Facebook" style="--accent-color: #106bff;"
+      href="https://www.facebook.com/profile.php?id=61577374810953">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <title>Facebook</title>
+        <path
+          d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+      </svg>
+    </a>
+    <a data-social="Telegram" style="--accent-color: #26A5E4;" href="https://t.me/+gExgbtO61vBkYmRi">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <title>Telegram</title>
+        <path
+          d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>由 <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a> 创建</p>
+    <p>最后更新：2025年6月</p>
+    &copy; <a class="border-bottom" href="index.html">维生素健康助手</a>，版权所有。
+    设计者 <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    const symptomToVitaminMap = {
+      tiredness: ["vitaminB12", "vitaminD", "vitaminE"],
+      drySkin: ["vitaminA", "vitaminE"],
+      bleedingGums: ["vitaminC", "vitaminK"],
+      musclePain: ["vitaminD", "vitaminB12"],
+      poorVision: ["vitaminA"],
+      slowHealing: ["vitaminC", "vitaminA"],
+      bonePain: ["vitaminD", "vitaminK"],
+      hairLoss: ["vitaminB12", "vitaminA", "vitaminE"],
+      memoryLoss: ["vitaminB12", "vitaminD"],
+      numbness: ["vitaminB12"],
+      easyBruising: ["vitaminC", "vitaminK"],
+      depression: ["vitaminD", "vitaminB12"],
+      poorAppetite: ["vitaminB12", "vitaminA"],
+      paleSkin: ["vitaminB12", "iron", "folate"],
+      frequentInfections: ["vitaminC", "vitaminD", "zinc"],
+      cracksMouth: ["vitaminB2", "vitaminB3", "vitaminB6"],
+      constipation: ["magnesium", "vitaminD"],
+      dizziness: ["vitaminB12", "iron"],
+      restlessLegs: ["iron", "magnesium"],
+      brittleNails: ["biotin", "iron"]
+    };
+
+    const vitaminNames = {
+      vitaminA: "维生素A",
+      vitaminB12: "维生素B12",
+      vitaminC: "维生素C",
+      vitaminD: "维生素D",
+      vitaminE: "维生素E",
+      vitaminK: "维生素K",
+      iron: "铁",
+      zinc: "锌",
+      folate: "叶酸（维生素B9）",
+      magnesium: "镁",
+      biotin: "维生素B7",
+      vitaminB2: "维生素B2",
+      vitaminB3: "维生素B3",
+      vitaminB6: "维生素B6"
+    };
+
+    const symptomForm = document.getElementById("symptomForm");
+    const quizResults = document.getElementById("quizResults");
+
+    symptomForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const checkedSymptoms = Array.from(document.querySelectorAll('input[name="symptom"]:checked')).map(cb => cb.value);
+
+      if (checkedSymptoms.length === 0) {
+        quizResults.innerHTML = `<p>请选择至少一种症状进行检测。</p>`;
+        return;
+      }
+
+      // 统计各维生素出现次数
+      const vitaminCount = {};
+      checkedSymptoms.forEach(symptom => {
+        (symptomToVitaminMap[symptom] || []).forEach(vit => {
+          vitaminCount[vit] = (vitaminCount[vit] || 0) + 1;
+        });
+      });
+
+      // 按出现次数降序排序
+      const sortedVitamins = Object.entries(vitaminCount).sort((a, b) => b[1] - a[1]);
+
+      if (sortedVitamins.length === 0) {
+        quizResults.innerHTML = `<p>未检测到与选择的症状相关的维生素缺乏。</p>`;
+        return;
+      }
+
+      quizResults.innerHTML = `<h2>可能的维生素缺乏匹配</h2><ul>` +
+        sortedVitamins.map(([vit, count]) => `<li><strong>${vitaminNames[vit]}</strong> — 相关症状数量：${count}</li>`).join('') +
+        `</ul>`;
+    });
+  </script>
+
+</body>
+
+</html>
