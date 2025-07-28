@@ -130,21 +130,21 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="ch_index.html" class="active">Home</a></li>
-        <li><a href="ch_product.html">Product</a></li>
-        <li><a href="ch_about.html">About</a></li>
-        <li><a href="ch_contact.html">Contact</a></li>
+        <li><a href="ch_index.html" class="active">主页</a></li>
+        <li><a href="ch_product.html">产品</a></li>
+        <li><a href="ch_about.html">关于我们</a></li>
+        <li><a href="ch_contact.html">联系</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">语言 ▼</a>
           <div class="dropdown-content">
-            <a href="../Ku/ku_risk-calculator.html">Kurdish</a>
-            <a href="ar/ar_index.html">Arabic</a>
-            <a href="fr/fr_index.html">French</a>
-            <a href="sp/sp_index.html">Spanish</a>
-            <a href="po/po_index.html">Polish</a>
-            <a href="it/it_index.html">Italian</a>
-            <a href="ch/ch_index.html">Chinese</a>
-            <a href="ge/ge_index.html">German</a>
+            <a href="../Ku/ku_risk-calculator.html">库尔德语</a>
+            <a href="ar/ar_index.html">阿拉伯语</a>
+            <a href="fr/fr_index.html">法语</a>
+            <a href="sp/sp_index.html">西班牙语</a>
+            <a href="po/po_index.html">波兰语</a>
+            <a href="it/it_index.html">意大利语</a>
+            <a href="ch/ch_index.html">中文</a>
+            <a href="ge/ge_index.html">德语</a>
           </div>
         </li>
       </ul>
@@ -152,146 +152,143 @@
   </header>
   <!-- Main content -->
   <div class="container">
-    <h1>Vitamin Deficiency Risk Calculator 🌿</h1>
+    <h1>维生素缺乏风险计算器 🌿</h1>
 
     <form id="quizForm">
 
       <label>
-        How often do you eat fruits and vegetables?
+        你多久吃一次水果和蔬菜？
         <select id="fruitsVeg" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="low">Rarely (0-1 days/week)</option>
-          <option value="medium">Sometimes (2-4 days/week)</option>
-          <option value="high">Often (5+ days/week)</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="low">很少（每周0-1天）</option>
+          <option value="medium">有时（每周2-4天）</option>
+          <option value="high">经常（每周5天以上）</option>
         </select>
       </label>
 
       <label>
-        How much time do you spend in sunlight daily?
+        你每天晒太阳的时间有多久？
         <select id="sunlight" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="low">Less than 10 minutes</option>
-          <option value="medium">10 to 30 minutes</option>
-          <option value="high">More than 30 minutes</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="low">少于10分钟</option>
+          <option value="medium">10到30分钟</option>
+          <option value="high">超过30分钟</option>
         </select>
       </label>
 
       <label>
-        What is your diet preference?
+        你的饮食偏好是什么？
         <select id="diet" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="omnivore">Omnivore(eat meat and plants)</option>
-          <option value="vegetarian">Vegetarian(No Meat or Fish, but may eat Cheese, Pizza, Pasta with Tomato Sauce,
-            Omelet)</option>
-          <option value="vegan">Vegan(No Animal Products at All; Fruits, Vegetables, Grains like Rice, Oats, Bread)
-          </option>
+          <option value="" disabled selected>请选择</option>
+          <option value="omnivore">杂食者（吃肉和植物）</option>
+          <option value="vegetarian">素食者（不吃肉或鱼，但可能吃奶酪、披萨、番茄酱意大利面、煎蛋）</option>
+          <option value="vegan">纯素者（完全不吃动物产品；只吃水果、蔬菜、谷物等）</option>
         </select>
       </label>
 
       <label>
-        Do you exercise or stay physically active regularly?
+        你是否经常锻炼或保持身体活动？
         <select id="exercise" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes, regularly</option>
-          <option value="no">No, rarely</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是，经常锻炼</option>
+          <option value="no">否，很少锻炼</option>
         </select>
       </label>
 
       <label>
-        Do you consume dairy or fortified plant milk products regularly?
+        你是否经常摄入乳制品或强化植物奶？
         <select id="dairy" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
         </select>
       </label>
 
       <label>
-        How often do you eat fish or seafood?
+        你多久吃一次鱼类或海鲜？
         <select id="fish" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="often">Often (3+ times/week)</option>
-          <option value="sometimes">Sometimes (1-2 times/week)</option>
-          <option value="rarely">Rarely or never</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="often">经常（每周3次以上）</option>
+          <option value="sometimes">有时（每周1-2次）</option>
+          <option value="rarely">很少或从不</option>
         </select>
       </label>
 
       <!-- New Questions -->
 
       <label>
-        Do you have any digestive or absorption problems (e.g., celiac disease, IBS, gastric surgery)?
+        你是否有任何消化或吸收问题？（如乳糜泻、肠易激综合症、胃部手术）
         <select id="digestiveIssues" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
         </select>
       </label>
 
       <label>
-        Do you take medications that may affect vitamin absorption (e.g., antacids, metformin)?
+        你是否服用可能影响维生素吸收的药物？（如抗酸药、二甲双胍等）
         <select id="medications" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
         </select>
       </label>
 
       <label>
-        Are you pregnant or breastfeeding?
+        你是否正在怀孕或哺乳？
         <select id="pregnant" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
         </select>
       </label>
 
       <label>
-        How often do you eat fortified foods? (e.g., iron-fortified cornflakes, calcium oatmeal, vitamin D granola)
+        你多久食用一次强化食品？（如强化铁的玉米片、钙燕麦片、维生素D麦片等）
         <select id="fortifiedFoods" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="often">Often</option>
-          <option value="sometimes">Sometimes</option>
-          <option value="rarely">Rarely or never</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="often">经常</option>
+          <option value="sometimes">有时</option>
+          <option value="rarely">很少或从不</option>
         </select>
       </label>
 
       <label>
-        How often do you take vitamin or mineral supplements? (e.g., Omega-3 softgels, multivitamins)
+        你多久服用一次维生素或矿物质补充剂？（如Omega-3胶囊、多种维生素）
         <select id="supplements" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="often">Often</option>
-          <option value="sometimes">Sometimes</option>
-          <option value="rarely">Rarely or never</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="often">经常</option>
+          <option value="sometimes">有时</option>
+          <option value="rarely">很少或从不</option>
         </select>
       </label>
 
-
       <label>
-        How often do you eat whole grains?(like whole wheat bread, oats, brown rice)
+        你多久吃一次全谷物？（如全麦面包、燕麦、糙米）
         <select id="wholeGrains" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="often">Often</option>
-          <option value="sometimes">Sometimes</option>
-          <option value="rarely">Rarely or never</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="often">经常</option>
+          <option value="sometimes">有时</option>
+          <option value="rarely">很少或从不</option>
         </select>
       </label>
 
       <label>
-        Do you smoke or consume alcohol regularly?
+        你是否经常吸烟或饮酒？
         <select id="smokeAlcohol" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="" disabled selected>请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
         </select>
       </label>
 
-      <button type="submit">Check My Risk</button>
+      <button type="submit">检查我的风险</button>
     </form>
 
     <div id="result" style="display:none;"></div>
     <div class="buttonbtn">
-      <a href="ch_index.html" class="btn">Back Home</a>
-      <a href="vitamins.html" class="btn">Select Vitamin Manually</a>
+      <a href="ch_index.html" class="btn">返回主页</a>
+      <a href="vitamins.html" class="btn">手动选择维生素</a>
     </div>
   </div>
   <div class="socials-container">
@@ -328,99 +325,99 @@
   </div>
   <!-- Footer -->
   <footer>
-    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
-    <p>Last updated: June 2025</p>
-    &copy; <a class="border-bottom" href="index.html">Vitamin Health Helper</a>, All Right Reserved.
-    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
-    </p>
+    <p>创建者 <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>最后更新：2025年6月</p>
+    &copy; <a class="border-bottom" href="index.html">维生素健康助手</a>，保留所有权利。
+    设计者：<a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
   </footer>
   <script src="../js/script.js"></script>
   <script>
     const vitaminsData = {
       "Vitamin A": {
         icon: "🥕",
-        description: "Essential for healthy vision, immune strength, and skin regeneration.",
-        functions: "Supports clear eyesight, healthy skin, and immune defense.",
-        symptoms: ["Night blindness", "Dry or rough skin", "Frequent infections", "Delayed wound healing"],
+        description: "对健康视力、免疫力和皮肤再生至关重要。",
+        functions: "有助于视力清晰、皮肤健康和免疫防御。",
+        symptoms: ["夜盲", "皮肤干燥或粗糙", "频繁感染", "伤口愈合缓慢"],
         foods: {
-          vegetables: ["Carrots", "Sweet Potatoes", "Spinach", "Kale", "Pumpkin", "Red Bell Peppers"],
-          fruits: ["Mango", "Cantaloupe", "Apricot", "Watermelon"],
-          animal: ["Liver", "Eggs", "Butter"]
+          vegetables: ["胡萝卜", "红薯", "菠菜", "羽衣甘蓝", "南瓜", "红柿子椒"],
+          fruits: ["芒果", "哈密瓜", "杏", "西瓜"],
+          animal: ["肝脏", "鸡蛋", "黄油"]
         },
-        plants: ["Carrot plant", "Sweet Potato vine", "Spinach leaves"],
-        dailyIntake: "Best obtained from liver, carrots, sweet potatoes, and leafy greens."
+        plants: ["胡萝卜植株", "红薯藤", "菠菜叶"],
+        dailyIntake: "最佳来源包括肝脏、胡萝卜、红薯和绿叶蔬菜。"
       },
       "Vitamin B12": {
         icon: "🍳",
-        description: "Supports nerve health and helps create red blood cells.",
-        functions: "Vital for brain function, energy levels, and blood production.",
-        symptoms: ["Fatigue", "Tingling in hands or feet", "Poor memory", "Dizziness"],
+        description: "支持神经健康并帮助制造红细胞。",
+        functions: "对大脑功能、能量水平和血液生成至关重要。",
+        symptoms: ["疲劳", "手脚刺痛", "记忆力差", "头晕"],
         foods: {
-          animal: ["Eggs", "Fish (salmon, tuna)", "Milk", "Cheese", "Yogurt"]
+          animal: ["鸡蛋", "鱼（鲑鱼、金枪鱼）", "牛奶", "奶酪", "酸奶"]
         },
-        plants: ["None (naturally found only in animal-based foods)"],
-        dailyIntake: " Important for vegetarians and vegans to consume fortified plant foods or B12-rich animal products."
+        plants: ["无（自然存在于动物性食物中）"],
+        dailyIntake: "素食者应摄入强化植物食品或富含 B12 的动物性产品。"
       },
       "Vitamin C": {
         icon: "🍊",
-        description: "Boosts immune function, skin repair, and collagen production.",
-        functions: "Helps heal wounds, maintain skin health, and strengthen immunity.",
-        symptoms: ["Frequent colds", "Bleeding gums", "Dry skin", "Slow wound healing"],
+        description: "增强免疫功能、修复皮肤并促进胶原蛋白生成。",
+        functions: "帮助伤口愈合、维持皮肤健康并增强免疫力。",
+        symptoms: ["感冒频繁", "牙龈出血", "皮肤干燥", "伤口愈合缓慢"],
         foods: {
-          fruits: ["Oranges", "Strawberries", "Kiwi", "Guava", "Papaya", "Pineapple"],
-          vegetables: ["Bell Peppers", "Broccoli", "Brussels Sprouts", "Tomatoes"]
+          fruits: ["橙子", "草莓", "奇异果", "番石榴", "木瓜", "菠萝"],
+          vegetables: ["柿子椒", "西兰花", "抱子甘蓝", "番茄"]
         },
-        plants: ["Orange tree", "Strawberry plant", "Bell Pepper plant"],
-        dailyIntake: " Get from citrus fruits, berries, peppers, and cruciferous vegetables."
+        plants: ["橙树", "草莓植株", "辣椒植株"],
+        dailyIntake: "可从柑橘类水果、浆果、辣椒和十字花科蔬菜中获取。"
       },
       "Vitamin D": {
         icon: "☀️",
-        description: "Helps absorb calcium and supports strong bones and immune health.",
-        functions: "Essential for bone growth, muscle function, and immune defense.",
-        symptoms: ["Bone pain", "Weak muscles", "Low energy", "Frequent illness"],
+        description: "帮助钙吸收，支持强健骨骼和免疫健康。",
+        functions: "对骨骼生长、肌肉功能和免疫防御至关重要。",
+        symptoms: ["骨痛", "肌肉无力", "精力低下", "频繁生病"],
         foods: {
-          animal: ["Fatty fish (salmon, mackerel)", "Egg yolks", "Liver"],
-          plants: ["Sunlight exposure (natural source)"]
+          animal: ["富含脂肪的鱼类（鲑鱼、鲭鱼）", "蛋黄", "肝脏"],
+          plants: ["阳光照射（自然来源）"]
         },
-        plants: ["Sunlight exposure"],
-        dailyIntake: " Primary sources include oily fish and sensible sun exposure."
+        plants: ["阳光照射"],
+        dailyIntake: "主要来源包括油性鱼类和适量日晒。"
       },
       "Vitamin K": {
         icon: "🥬",
-        description: "Crucial for blood clotting and maintaining bone health.",
-        functions: "Helps wounds heal and supports strong bones.",
-        symptoms: ["Excessive bleeding", "Easy bruising", "Weak bones"],
+        description: "对血液凝固和骨骼健康至关重要。",
+        functions: "帮助伤口愈合并支持强健骨骼。",
+        symptoms: ["流血过多", "容易瘀青", "骨质疏松"],
         foods: {
-          vegetables: ["Kale", "Spinach", "Broccoli", "Brussels Sprouts", "Collard Greens", "Turnip Greens"]
+          vegetables: ["羽衣甘蓝", "菠菜", "西兰花", "抱子甘蓝", "芥菜", "芜菁叶"]
         },
-        plants: ["Kale plant", "Spinach leaves", "Broccoli plant"],
-        dailyIntake: " Best from dark leafy greens like kale and spinach."
+        plants: ["羽衣甘蓝植株", "菠菜叶", "西兰花植株"],
+        dailyIntake: "最佳来源为深绿色叶菜，如羽衣甘蓝和菠菜。"
       },
       "Iron": {
         icon: "🥩",
-        description: "Carries oxygen in the blood and prevents tiredness.",
-        functions: "Supports energy levels, red blood cell creation, and focus.",
-        symptoms: ["Tiredness", "Pale skin", "Headaches", "Shortness of breath"],
+        description: "将氧气运输至全身并预防疲劳。",
+        functions: "支持能量水平、红细胞生成和专注力。",
+        symptoms: ["疲劳", "皮肤苍白", "头痛", "气短"],
         foods: {
-          animal: ["Red meat", "Liver", "Chicken", "Turkey", "Fish"],
-          vegetables: ["Spinach", "Lentils", "Beans", "Tofu", "Pumpkin seeds"]
+          animal: ["红肉", "肝脏", "鸡肉", "火鸡", "鱼"],
+          vegetables: ["菠菜", "扁豆", "豆类", "豆腐", "南瓜籽"]
         },
-        plants: ["Spinach leaves", "Lentil plants", "Chickpea plant"],
-        dailyIntake: " Include red meat, beans, spinach, and seeds in meals."
+        plants: ["菠菜叶", "扁豆植株", "鹰嘴豆植株"],
+        dailyIntake: "饮食中应包括红肉、豆类、菠菜和种子。"
       },
       "Calcium": {
         icon: "🦴",
-        description: "Builds strong bones and supports heart and muscle function.",
-        functions: "Maintains bone structure, supports nerve function and muscle contraction.",
-        symptoms: ["Muscle cramps", "Weak bones", "Tooth decay", "Numbness"],
+        description: "构建强健骨骼并支持心脏和肌肉功能。",
+        functions: "维持骨骼结构，支持神经功能和肌肉收缩。",
+        symptoms: ["肌肉痉挛", "骨骼脆弱", "牙齿蛀坏", "麻木感"],
         foods: {
-          animal: ["Milk", "Cheese", "Yogurt"],
-          vegetables: ["Broccoli", "Kale", "Bok Choy", "Almonds", "Sesame seeds"]
+          animal: ["牛奶", "奶酪", "酸奶"],
+          vegetables: ["西兰花", "羽衣甘蓝", "小白菜", "杏仁", "芝麻"]
         },
-        plants: ["Almond tree", "Broccoli plant", "Kale leaves"],
-        dailyIntake: " Obtain from dairy, leafy greens, and calcium-rich nuts/seeds."
+        plants: ["杏树", "西兰花植株", "羽衣甘蓝叶"],
+        dailyIntake: "可从奶制品、绿叶蔬菜和富含钙的坚果/种子中获取。"
       }
     };
+
 
 
 
@@ -502,31 +499,32 @@
       // Clean output
       risks = [...new Set(risks)].sort();
 
-      const resultDiv = document.getElementById("result");
-      if (risks.length === 0) {
-        resultDiv.innerHTML = `<p><strong>Great news! 🎉</strong> Your answers suggest a low risk for common vitamin and mineral deficiencies. Keep eating healthy and staying active!</p>`;
-      } else {
-        let html = `<p><strong>Possible Vitamin/Mineral Deficiency Risks:</strong></p>`;
-        for (let vit of risks) {
-          const v = vitaminsData[vit];
-          html += `
-        <div class="vitamin-block">
-          <div class="vitamin-icon">${v.icon}</div>
-          <div class="vitamin-content">
-            <strong>${vit}</strong> — ${v.description}<br/>
-            <span class="section-title">Functions:</span> ${v.functions}<br/>
-            <span class="section-title">Common deficiency symptoms:</span> ${v.symptoms.join(", ")}<br/>
-            <span class="section-title">Recommended daily intake:</span> ${v.dailyIntake}<br/>
-            <span class="section-title">Natural food sources:</span><br/>
-            ${Object.entries(v.foods).map(([category, items]) =>
-            `&nbsp;&nbsp;- <em>${capitalize(category)}</em>: ${items.join(", ")}<br/>`
+     const resultDiv = document.getElementById("result");
+if (risks.length === 0) {
+  resultDiv.innerHTML = `<p><strong>好消息！🎉</strong> 您的答案表明您患常见维生素和矿物质缺乏症的风险较低。请继续保持健康饮食和积极的生活方式！</p>`;
+} else {
+  let html = `<p><strong>可能的维生素/矿物质缺乏风险：</strong></p>`;
+  for (let vit of risks) {
+    const v = vitaminsData[vit];
+    html += `
+      <div class="vitamin-block">
+        <div class="vitamin-icon">${v.icon}</div>
+        <div class="vitamin-content">
+          <strong>${vit}</strong> — ${v.description}<br/>
+          <span class="section-title">功能：</span> ${v.functions}<br/>
+          <span class="section-title">常见缺乏症状：</span> ${v.symptoms.join(", ")}<br/>
+          <span class="section-title">建议每日摄入量：</span> ${v.dailyIntake}<br/>
+          <span class="section-title">天然食物来源：</span><br/>
+          ${Object.entries(v.foods).map(([category, items]) =>
+            `&nbsp;&nbsp;- <em>${capitalize(category)}</em>：${items.join(", ")}<br/>`
           ).join("")}
-            <span class="section-title">Plants:</span> ${v.plants.join(", ")}
-          </div>
+          <span class="section-title">植物来源：</span> ${v.plants.join(", ")}
         </div>
-      `;
-        }
-        html += `<p>Consider including these foods in your diet or consult a healthcare professional for personalized advice.</p>`;
+      </div>
+    `;
+  }
+
+        html += `<p>建议在饮食中加入这些食物，或咨询医疗专业人士以获取个性化建议。</p>`;
         resultDiv.innerHTML = html;
       }
 
