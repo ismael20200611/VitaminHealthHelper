@@ -24,75 +24,75 @@
 
 <body>
   <!-- Header with Logo -->
-  <header>
-    <nav>
-      <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+ <header>
+  <nav>
+    <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
-      <!-- Hamburger toggle for mobile -->
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul id="navLinks">
-        <li><a href="ch_index.html" class="active">Home</a></li>
-        <li><a href="ch_product.html">Product</a></li>
-        <li><a href="ch_about.html">About</a></li>
-        <li><a href="ch_contact.html">Contact</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
-          <div class="dropdown-content">
-            <a href="../Ku/ku_vitamins.html">Kurdish</a>
-            <a href="ar/ar_index.html">Arabic</a>
-            <a href="fr/fr_index.html">French</a>
-            <a href="sp/sp_index.html">Spanish</a>
-            <a href="po/po_index.html">Polish</a>
-            <a href="it/it_index.html">Italian</a>
-            <a href="ch/ch_index.html">Chinese</a>
-            <a href="ge/ge_index.html">German</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Main content -->
-  <div class="container">
-    <h1>Select Your Vitamin Deficiency</h1>
-    <p>Choose a vitamin below to get natural food, plant, workout, and sunlight suggestions.</p>
-
-    <select id="vitaminSelect" aria-label="Select Vitamin">
-      <option value="">-- Select Vitamin --</option>
-      <option value="vitaminA">Vitamin A</option>
-      <option value="vitaminB1">Vitamin B1 (Thiamine)</option>
-      <option value="vitaminB2">Vitamin B2 (Riboflavin)</option>
-      <option value="vitaminB3">Vitamin B3 (Niacin)</option>
-      <option value="vitaminB5">Vitamin B5 (Pantothenic Acid)</option>
-      <option value="vitaminB6">Vitamin B6 (Pyridoxine)</option>
-      <option value="vitaminB7">Vitamin B7 (Biotin)</option>
-      <option value="vitaminB9">Vitamin B9 (Folate)</option>
-      <option value="vitaminB12">Vitamin B12 (Cobalamin)</option>
-      <option value="vitaminC">Vitamin C</option>
-      <option value="vitaminD">Vitamin D</option>
-      <option value="vitaminE">Vitamin E</option>
-      <option value="vitaminK">Vitamin K</option>
-      <option value="calcium">Calcium</option>
-      <option value="magnesium">Magnesium</option>
-      <option value="iron">Iron</option>
-      <option value="zinc">Zinc</option>
-    </select>
-
-    <section id="suggestions" aria-live="polite" class="suggestions-container">
-      <!-- Suggestions will appear here dynamically -->
-    </section>
-
-
-    <div class="buttonbtn">
-      <a href="ch_index.html" class="btn">Back Home</a>
-      <a href="quiz.html" class="btn">Go to Symptom Quiz</a>
+    <!-- Hamburger toggle for mobile -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
+    <ul id="navLinks">
+      <li><a href="ch_index.html" class="active">主页</a></li>
+      <li><a href="ch_product.html">产品</a></li>
+      <li><a href="ch_about.html">关于我们</a></li>
+      <li><a href="ch_contact.html">联系</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">语言 ▼</a>
+        <div class="dropdown-content">
+          <a href="../Ku/ku_vitamins.html">库尔德语</a>
+          <a href="ar/ar_index.html">阿拉伯语</a>
+          <a href="fr/fr_index.html">法语</a>
+          <a href="sp/sp_index.html">西班牙语</a>
+          <a href="po/po_index.html">波兰语</a>
+          <a href="it/it_index.html">意大利语</a>
+          <a href="ch/ch_index.html">中文</a>
+          <a href="ge/ge_index.html">德语</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main content -->
+<div class="container">
+  <h1>选择你的维生素缺乏类型</h1>
+  <p>选择下方维生素以获取天然食物、植物、锻炼和阳光建议。</p>
+
+  <select id="vitaminSelect" aria-label="选择维生素">
+    <option value="">-- 选择维生素 --</option>
+    <option value="vitaminA">维生素A</option>
+    <option value="vitaminB1">维生素B1（硫胺素）</option>
+    <option value="vitaminB2">维生素B2（核黄素）</option>
+    <option value="vitaminB3">维生素B3（烟酸）</option>
+    <option value="vitaminB5">维生素B5（泛酸）</option>
+    <option value="vitaminB6">维生素B6（吡哆醇）</option>
+    <option value="vitaminB7">维生素B7（生物素）</option>
+    <option value="vitaminB9">维生素B9（叶酸）</option>
+    <option value="vitaminB12">维生素B12（钴胺素）</option>
+    <option value="vitaminC">维生素C</option>
+    <option value="vitaminD">维生素D</option>
+    <option value="vitaminE">维生素E</option>
+    <option value="vitaminK">维生素K</option>
+    <option value="calcium">钙</option>
+    <option value="magnesium">镁</option>
+    <option value="iron">铁</option>
+    <option value="zinc">锌</option>
+  </select>
+
+  <section id="suggestions" aria-live="polite" class="suggestions-container">
+    <!-- Suggestions will appear here dynamically -->
+  </section>
+
+  <div class="buttonbtn">
+    <a href="ch_index.html" class="btn">返回主页</a>
+    <a href="quiz.html" class="btn">前往症状测验</a>
   </div>
+</div>
+
   <div class="socials-container">
     <!-- <a data-social="Twitter" style="--accent-color: black;" href="">
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
