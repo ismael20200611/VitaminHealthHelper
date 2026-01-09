@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -46,13 +45,16 @@
           <a href="#" class="dropbtn">Language ▼</a>
           <div class="dropdown-content"> 
             <a href="Ku/ku_index.html">Kurdish</a>
-            <a href="ar/ar_index.html">Arabic</a>
+           <div >
+             <div  id="google_translate_element" "></div>
+            </div>
+            <!-- <a href="ar/ar_index.html">Arabic</a>
             <a href="fr/fr_index.html">French</a>
             <a href="sp/sp_index.html">Spanish</a>
             <a href="po/po_index.html">Polish</a>
             <a href="it/it_index.html">Italian</a>
             <a href="ch/ch_index.html">Chinese</a>
-            <a href="ge/ge_index.html">German</a>
+            <a href="ge/ge_index.html">German</a> -->
           </div>
         </li>
       </ul>
@@ -121,7 +123,17 @@
     Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
     </p>
   </footer>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'en'}, 
+    'google_translate_element'
+  );
+}
+</script>
 
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 </body>
-
 </html>
